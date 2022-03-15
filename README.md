@@ -61,9 +61,9 @@ https://www.educative.io/courses/grokking-the-coding-interview
 ### Pattern: Fast & Slow pointers (7) Required
 - [ ] LinkedList Cycle (easy): LC 141
       Done: 
-- [x] Start of LinkedList Cycle (medium): LC 142
+- [ ] Start of LinkedList Cycle (medium): LC 142
       Done:
--  ] Happy Number (medium): LC 202
+- [ ] Happy Number (medium): LC 202
       Done:
 - [ ] Middle of the LinkedList (easy): LC 876
       Done:

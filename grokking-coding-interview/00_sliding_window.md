@@ -79,7 +79,25 @@ function max_sub_array_of_size_k(k, arr) {
  *      if it's not
  *  */
 
+function smallest_subarray_with_given_sum(s, arr) {
+  let windowSum = 0,
+    minLength = Infinity,
+    windowStart = 0;
 
+  for (windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    windowSum += arr[windowEnd]; 
+   while (windowSum >= s) {
+      minLength = Math.min(minLength, windowEnd - windowStart + 1); // this is 
+      windowSum -= arr[windowStart];
+      windowStart += 1;
+    }
+  }
+
+  if (minLength === Infinity) { 
+    return 0;
+  }
+  return minLength;
+}
 
 ```
 ### Longest Substring with K Distinct Characters
@@ -109,6 +127,32 @@ function max_sub_array_of_size_k(k, arr) {
 
 // 1st step: ascertain the the character on the right (windowEnd)
 // If the window contains more than K distinct characters, we want to shrink the window to see if we can lower the distinct characters we find
+
+function longest_substring_with_k_distinct(str, k) {
+  let windowStart = 0,
+    maxLength = 0,
+    charFrequency = {};
+
+  for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
+    const rightChar = str[windowEnd];
+    if (!(rightChar in charFrequency)) {
+      charFrequency[rightChar] = 0;
+    }
+    charFrequency[rightChar] += 1;
+
+    while (Object.keys(charFrequency).length > k) { 
+      const leftChar = str[windowStart];
+      charFrequency[leftChar] -= 1;
+      if (charFrequency[leftChar] === 0) {
+        delete charFrequency[leftChar];
+      }
+      windowStart += 1; 
+    }
+    maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+  }
+
+  return maxLength;
+}
 
 ```
 
@@ -245,7 +289,37 @@ function non_repeat_substring(str) {
  *
  *  */
 
-
+var characterReplacement = function(str, k) {
+    if(str.length === 0 || str.length === null) {
+        return 0
+    }
+    
+    let maxLength = -Infinity,
+        charMap = {},
+        windowStart = 0,
+        maxRepeatLetter = 0
+    
+    for(let windowEnd = 0; windowEnd < str.length; windowEnd++) {
+        let rightChar = str[windowEnd];
+        
+        if(!(rightChar in charMap)) {
+            charMap[rightChar] = 0;
+        }
+        
+        charMap[rightChar] += 1
+        maxRepeatLetter = Math.max(maxRepeatLetter, charMap[rightChar])
+        
+        if(windowEnd - windowStart + 1 - maxRepeatLetter > k) {
+            
+            let leftChar = str[windowStart];
+            charMap[leftChar] -= 1
+            windowStart++
+        }
+        maxLength = Math.max(maxLength, windowEnd - windowStart + 1)
+    }
+    
+    return maxLength;
+};
 ```
 
 ### Longest Subarray with Ones after Replacement
@@ -268,6 +342,33 @@ function non_repeat_substring(str) {
      and then while( windowSize - maxRepeating1s < k) shrink the window
  *  */
 
+const length_of_longest_substring = function(arr, k) {
+
+  if(arr.length === 0 || arr.length === null) {
+    return 0;
+  }
+  let windowStart = 0;
+  let maxLength = -Infinity; 
+  let maxOneCount = 0; 
+
+    for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+
+        if(arr[windowEnd] === 1) {
+        maxOneCount++
+        }
+
+        if(windowEnd - windowStart + 1 - maxOneCount > k) {
+            if (arr[windowStart] === 1) {
+            maxOneCount -= 1;
+            }
+        windowStart++
+        }
+
+        maxLength = Math.max(windowEnd - windowStart + 1, maxLength)
+
+    }
+    return maxLength;
+};
 ```
 
 ### Problem 1
@@ -300,12 +401,51 @@ function non_repeat_substring(str) {
  *    return false
  *  */
 
+function find_permutation(string, pattern) {
+    let windowStart = 0;
+    let match = 0;
+    let charMap = {};
+    
+    for(i = 0; i < pattern.length; i++) {
+        let char = pattern[i];
+        if(!(char in charMap)) {
+            charMap[char] = 0
+        
+        charMap[char] += 1;
+    };
+    
+    for(let windowEnd = 0; windowEnd < string.length; windowEnd++) {
+        let rightChar = string[windowEnd]
+        
+        if(rightChar in charMap) {
+            charMap[rightChar] -= 1
+            if(charMap[rightChar] === 0) {
+                match += 1
+            }
+        };
+           
+        if(match === Object.keys(charMap).length) {
+            return true
+        }
+        
+        if(windowEnd >= pattern.length - 1) {
+            let leftChar = string[windowStart];
+            windowStart += 1;
+            
+            if(leftChar in charMap) {
+                if(charMap[leftChar] === 0) {
+                    match =- 1
+                }
+                charMap[leftChar] += 1
+            }
+        }
+    }
+    return false;
 
 ```
 
 ### Problem 2
 ```js
-//2nd attempt
 /** Given a string and a pattern, find all anagrams of the pattern in the given string.
  * Input: String and Pattern
  * Output: Starting indices of the anagrams in the string

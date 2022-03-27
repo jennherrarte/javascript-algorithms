@@ -1,6 +1,3 @@
-# Cheetcode-Study-Prep-June-2021
-
-
 # Algorithms
 # Module 1
 

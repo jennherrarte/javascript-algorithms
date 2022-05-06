@@ -56,3 +56,33 @@ function remove_duplicates(arr) {
 }
 
 ```
+### Squaring a Sorted Array 
+Given a sorted array, create a new array containing squares of all the numbers of the input array in the sorted order.
+
+``` 
+function make_squares(arr) {
+	let squares = Array(n).fill(0)
+	let n = arr.length
+	let right = n - 1
+	let left = 0
+	let highestSquareIdx = n - 1
+	
+	while(left < right) {
+		let rightSquare = arr[right] * arr[right]
+		let leftSquare = arr[left] * arr[left]
+		
+		if(rightSquare > leftSquare) {
+			squares[highestSquareIdx] = rightSquare
+			right--
+		} else {
+			squares[highestSquareIdx] = leftSquare
+			left++
+		}
+		highestSquareIdx--
+	}
+	
+	return squares
+
+}
+```
+

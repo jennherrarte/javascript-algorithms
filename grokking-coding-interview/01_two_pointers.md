@@ -85,4 +85,90 @@ function make_squares(arr) {
 
 }
 ```
+### Triplet Sum to Zero 
 
+Given an array of unsorted numbers, find all unique triplets in it that add up to zero.
+
+```
+function find_triplets(arr) {
+	let triplets = [ ];
+	arr.sort((a,b) => a - b)
+	
+	for(i = 0; i < arr.length; i++) {
+		if(i > 0 && arr[i] === arr[i - 1]) {
+			continue;
+		}
+		search_triplets(arr, -arr[i], i + 1, triplets)
+	}
+	return triplets
+}
+
+function search_triplets(arr, target_sum, left, triplets) {
+let right = arr.length - 1
+	while(left < right) {
+	let current_sum = arr[left] + arr[right]
+	
+	if(targetSum === current_sum) {
+		triplets.push([-target_sum, arr[right], arr[left]])
+		right--
+		left++
+		
+		while(left < right && arr[left] === arr[left - 1]) {
+			left++
+		}
+		
+		while(left < right && arr[right] === arr[right + 1]) {
+			right--
+		}
+	
+	} else if (target_sum > current_sum) {
+		left++
+	
+	} else {
+		right--
+  }
+ }
+}
+```
+### Triplets with Smaller Sum
+
+Given an array arr of unsorted numbers and a target sum, count all triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j, and k are three different indices. Write a function to return the count of such triplets.
+
+``` 
+function triplet_with_smaller_sum (arr, target) {
+	arr.sort((a,b) => a - b)
+	let closestSum = Infinity
+	
+	for(i = 0; i < arr.length - 2; i++) {
+	
+		let left = i + 1
+		let right = arr.length - 1
+		
+		while(left < right) {
+		
+			let sum = arr[i] + arr[left] + arr[right]
+			
+			if (sum === target) {
+				return sum
+			}
+			
+			if(Math.abs(sum - target) < Math.abs(closestSum - target)) {
+				closestSum = target
+			}
+			
+			if(sum > target) {
+				right--
+			} else {
+				left++
+			}
+		
+		}
+	
+	}
+
+	return closestSum
+
+}
+
+
+```

@@ -205,3 +205,33 @@ function find_product_subarray (arr, target) {
 ```
 time: O(N^3) since O(N) for sliding window, and worst O(n^2) create subarrays
 space: O(N^3) at most O(n^2) space for output list and each subarray can take O(n)
+
+### Dutch National Flag Problem
+
+Given an array containing 0s, 1s and 2s, sort the array in-place. You should treat numbers of the array as objects, hence, we can’t count 0s, 1s, and 2s to recreate the array.
+
+```
+function dutch_flag_sort(arr) {
+  // all elements < low are 0, and all elements > high are 2
+  // all elements from >= low < i are 1
+  let low = 0,
+    high = arr.length - 1,
+    i = 0;
+  while (i <= high) {
+    if (arr[i] === 0) {
+      [arr[i], arr[low]] = [arr[low], arr[i]]; // swap
+      // increment 'i' and 'low'
+      i += 1;
+      low += 1;
+    } else if (arr[i] === 1) {
+      i += 1;
+    } else { // the case for arr[i] === 2
+      [arr[i], arr[high]] = [arr[high], arr[i]]; // swap
+      // decrement 'high' only, after the swap the number at index 'i' could be 0, 1, or 2
+      high -= 1;
+    }
+  }
+}
+
+
+```x

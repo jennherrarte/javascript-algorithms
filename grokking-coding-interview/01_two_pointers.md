@@ -203,3 +203,5 @@ function find_product_subarray (arr, target) {
 }
 
 ```
+time: O(N^3) since O(N) for sliding window, and worst O(n^2) create subarrays
+space: O(N^3) at most O(n^2) space for output list and each subarray can take O(n)

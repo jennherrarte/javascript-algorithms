@@ -1,0 +1,22 @@
+{
+  "name": "javascript-algorithms",
+  "version": "1.0.0",
+  "description": "# Grokking the Coding Interview Patterns",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JennHerrarte/javascript-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JennHerrarte/javascript-algorithms/issues"
+  },
+  "homepage": "https://github.com/JennHerrarte/javascript-algorithms#readme",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}

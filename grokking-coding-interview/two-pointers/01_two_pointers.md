@@ -298,8 +298,8 @@ function triplet_with_smaller_sum (nums, target) {
 }
 
 ```
-<**TC: O(n * logN * n) ---> O(n^2)**
-<**SC: O(n)**
+>**TC: O(n * logN * n) ---> O(n^2)** <br>
+>**SC: O(n)**
 ### Subarrays with Product Less than a Target 
 ```
 Given an array with positive numbers and a positive target number, find all of its contiguous 

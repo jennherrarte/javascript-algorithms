@@ -199,10 +199,74 @@ let right = arr.length - 1
 
 > **SC: Ignoring the sapce required for the output array, the sapce complexity of the above algorithm**
 **will be O(N) which is required for sorting.**
+
+### Triplet Sum Close to Target 
+```
+Given an array of unsorted numbers and a target number, find a triplet in the array whose sum is as close to the target number as possible, return the sum of the triplet. If there are more than one such triplet, return the sum of the triplet with the smallest sum.
+```
+```
+**Example 1:**
+Input: [-2, 0, 1, 2], target=2
+Output: 1
+Explanation: The triplet [-2, 1, 2] has the closest sum to the target.
+
+
+**Example 2:**
+Input: [-3, -1, 1, 2], target=1
+Output: 0
+Explanation: The triplet [-3, 1, 2] has the closest sum to the target.
+```
+```js
+const triplet_sum_close_to_target = function(arr, target) {
+   // sort nums so we can take a sliding window approach later for visiting triplets
+    arr.sort((a,b)  => a-b)
+    let closestSum = Infinity
+    
+    for(i = 0; i < arr.length - 2; i++) {
+        let left = i + 1
+        let right = arr.length - 1
+        while(left < right) {
+            let sum = arr[i] + arr[left] + arr[right]
+
+            if(sum === target) {
+                return sum
+            }
+
+            if(Math.abs(sum - target) < Math.abs(closestSum - target)) {
+                closestSum = sum
+            }
+
+            if(sum > target) {
+                right--
+            } else {
+                left++
+            }
+        }
+    }
+    
+    return closestSum
+};
+```
+>**TC: O(nlogn)**
+>**SC: O(N)**
 ### Triplets with Smaller Sum
 ```
 Given an array arr of unsorted numbers and a target sum, count all triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j, and k are three different indices. Write a function to return the count of such triplets.
 ```
+
+```
+**Example 1:**
+Input: [-1, 0, 2, 3], target=3 
+Output: 2
+Explanation: There are two triplets whose sum is less than the target: [-1, 0, 3], [-1, 0, 2]
+
+**Example 2:**
+Input: [-1, 4, 2, 1, 3], target=5 
+Output: 4
+Explanation: There are four triplets whose sum is less than the target: 
+   [-1, 1, 4], [-1, 1, 3], [-1, 1, 2], [-1, 2, 3]
+```
+
 ```js
 function triplet_with_smaller_sum (arr, target) {
 	arr.sort((a,b) => a - b)
@@ -230,9 +294,7 @@ function triplet_with_smaller_sum (arr, target) {
 			} else {
 				left++
 			}
-		
 		}
-	
 	}
 
 	return closestSum
@@ -243,6 +305,17 @@ function triplet_with_smaller_sum (arr, target) {
 ### Subarrays with Product Less than a Target 
 ```
 Given an array with positive numbers and a positive target number, find all of its contiguous subarrays whose product is less than the target number.
+```
+```
+**Example 1:**
+Input: [2, 5, 3, 10], target=30 
+Output: [2], [5], [2, 5], [3], [5, 3], [10]
+Explanation: There are six contiguous subarrays whose product is less than the target.
+
+**Example 2:**
+Input: [8, 2, 6, 5], target=50 
+Output: [8], [2], [8, 2], [6], [2, 6], [5], [6, 5] 
+Explanation: There are seven contiguous subarrays whose product is less than the target.
 ```
 ```js
 function find_product_subarray (arr, target) {
@@ -278,6 +351,15 @@ function find_product_subarray (arr, target) {
 ```
 Given an array containing 0s, 1s and 2s, sort the array in-place. You should treat numbers of the array as objects, hence, we can’t count 0s, 1s, and 2s to recreate the array.
 ```
+```
+**Example 1:**
+Input: [1, 0, 2, 1, 0]
+Output: [0, 0, 1, 1, 2]
+
+**Example 2:**
+Input: [2, 2, 0, 1, 2, 0]
+Output: [0, 0, 1, 2, 2, 2,]
+```
 ```js
 function dutch_flag_sort(arr) {
   // all elements < low are 0, and all elements > high are 2
@@ -300,6 +382,6 @@ function dutch_flag_sort(arr) {
     }
   }
 }
-
-
 ```
+>**TC:O(N)**<br>
+>**SC:O(1)**

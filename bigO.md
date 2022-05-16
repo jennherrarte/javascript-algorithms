@@ -1,4 +1,5 @@
 ### Big 0s 
+```js
 **O(1)** - Constant - no loops
 
 **O(log N)** - Logarithmic - usually searching algorithms have log n if they are sorted (Binary Search)
@@ -16,9 +17,9 @@
 **Iterating through half a collection is still O(n)**
 
 **Two seperate collections: O(a * b)**
-
+```
 ### What can cause time in a function? 
-
+```
 Operations(+ , - , * , /)
 
 Comparisons (< , > , ==)
@@ -26,9 +27,9 @@ Comparisons (< , > , ==)
 Looping(for, while)
 
 Outside Function Call(function())
-
+```
 ### Rule Book 
-
+```
 Rule 1 - Always worst case
 
 Rule 2 - Remove constants
@@ -40,9 +41,11 @@ Rule 3
     * for nested steps
 
 Rule 4 - Drop non-dominant  terms
-
+```
 ###  What Causes Space Complexity? 
+```
 - Variables 
 - Data Structures 
 - Function Call 
 - Allocations
+```

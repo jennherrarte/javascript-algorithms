@@ -115,8 +115,8 @@ Output: [0, 1, 1, 4, 9]
 ```
 ``` js
 function make_squares(arr) {
+  let n = arr.length
 	let squares = Array(n).fill(0)
-	let n = arr.length
 	let right = n - 1
 	let left = 0
 	let highestSquareIdx = n - 1

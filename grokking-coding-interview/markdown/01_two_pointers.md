@@ -57,7 +57,7 @@ function pair_with_target_sum(arr, targetSum) {
   return [-1, -1];
 }
 ```
->**TC:O(N)**
+>**TC:O(N)**<br>
 >**SC:O(1)**
 ### Remove Duplicates 
 ```
@@ -95,7 +95,7 @@ function remove_duplicates(arr) {
 }
 
 ```
->**TC:O(N)**
+>**TC:O(N)**<br>
 >**SC:O(1)**
 ### Squaring a Sorted Array 
 ```
@@ -136,7 +136,7 @@ function make_squares(arr) {
 
 }
 ```
->**TC:O(N)**
+>**TC:O(N)**<br>
 >**SC:O(N)**
 ### Triplet Sum to Zero 
 ```
@@ -247,7 +247,7 @@ const triplet_sum_close_to_target = function(arr, target) {
     return closestSum
 };
 ```
->**TC: O(nlogn)**
+>**TC: O(nlogn)**<br>
 >**SC: O(N)**
 ### Triplets with Smaller Sum
 ```

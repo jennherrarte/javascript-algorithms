@@ -15,7 +15,7 @@
 
 
 ### Maximum Sum Subarray of Size K
-```js
+```
 /* Given an array of positive numbers and a positive number ‘k,’ find the maximum sum
  * of any contiguous subarray of size ‘k’.
  *
@@ -41,7 +41,7 @@
  **/
 ```
 
-```js
+```
 **Example 1:**
 Input: [2, 1, 5, 1, 3, 2], k=3
 Output: 9
@@ -78,7 +78,7 @@ function max_sub_array_of_size_k(k, arr) {
 > **Space: O(1)**
 
 ### Smallest Subarray with a Greater Sum
-```js
+```
 /** Given an array of positive numbers and a positive number ‘S,’ find the length of the
  * smallest contiguous subarray whose sum is greater than or equal to ‘S’. Return 0 if no
  * such subarray exists.
@@ -95,7 +95,7 @@ function max_sub_array_of_size_k(k, arr) {
  *      if it's not
  *  */
 ```
-```js
+```
 **Example 1:**
 Input: [2, 1, 5, 2, 3, 2], S=7
 Output: 2
@@ -136,7 +136,7 @@ function smallest_subarray_with_given_sum(s, arr) {
 > **Time: O(N) two loops O(n + n) but asymptotically O(n)**<br>
 > **Space: O(1)**
 ### Longest Substring with K Distinct Characters
-```js
+```
 /** Given a string, find the length of the longest substring in it with no more than K distinct
  *  characters.
  * Input; string, k is the max # of distinct characters
@@ -163,7 +163,7 @@ function smallest_subarray_with_given_sum(s, arr) {
 // 1st step: ascertain the the character on the right (windowEnd)
 // If the window contains more than K distinct characters, we want to shrink the window to see if we can lower the distinct characters we find
 ```
-```js
+```
 **Example1:**
 Input: String="araaci", K=2
 Output: 4
@@ -205,7 +205,7 @@ function longest_substring_with_k_distinct(str, k) {
 > **Space: O(M)**
 
 ### Fruits into Baskets
-```js
+```
 /** Given an array of characters where each character represents a fruit tree, you are
  *  given two baskets, and your goal is to put maximum number of fruits in each basket.
  * The only restriction is that each basket can have only one type of fruit.
@@ -228,7 +228,7 @@ function longest_substring_with_k_distinct(str, k) {
  *  we can match it again windowEnd - windowStart
  * */
 ```
-```js
+```
 **Example:**
 Input: Fruit=['A', 'B', 'C', 'A', 'C']
 Output: 3
@@ -273,7 +273,7 @@ function fruits_in_a_basket(fruits) {
 > **Time: O(N) - O(N + N) which is equivalent to O(N)** <br>
 > **Space: O(1) - as there can be a maximum of three types of fruits stored in the frequency map.**
 ### No-repeat Substring
-```js
+```
 /** Find length of the longest substring, which has no repeating characters.
  * Input: string
  * Output : LENGTH of the longest substring (unique characters)
@@ -296,7 +296,7 @@ function fruits_in_a_basket(fruits) {
  * bcaabdd
 */
 ```
-```js
+```
 **Example:**
 Input: String="aabccbb"
 Output: 3
@@ -332,7 +332,7 @@ function non_repeat_substring(str) {
 > **Space: O(K) / O(1) since there is a set 26 distinct english letters to fit in the hashmap**
 
 ### Longest Substring with Same Letters after Replacement
-```js
+```
 /** Given a string with lowercase letters only, if you are allowed to replace
  * no more than ‘k’ letters with any letter, find the length of the longest
  * substring having the same letters after replacement.
@@ -363,7 +363,7 @@ function non_repeat_substring(str) {
  *
  *  */
 ```
-```js
+```
 **Example:**
 Input: String="aabccbb", k=2
 Output: 5
@@ -409,7 +409,7 @@ var characterReplacement = function(str, k) {
 > **TC: O(N)**<br>
 > **SC: O(1)**
 ### Longest Subarray with Ones after Replacement
-```js
+```
 /** Given an array containing 0s and 1s, if you are allowed to replace no more than
  *  ‘k’ 0s with 1s, find the length of the longest contiguous subarray having all 1s.
  * Output: maxLength - of subarray having all 1s (after replacement)
@@ -427,7 +427,7 @@ var characterReplacement = function(str, k) {
      and then while( windowSize - maxRepeating1s < k) shrink the window
  *  */
 ```
-```js
+```
 **Example:**
 Input: Array=[0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1], k=2
 Output: 6
@@ -470,7 +470,7 @@ const length_of_longest_substring = function(arr, k) {
 > **SC: O(1)**
 
 ### Problem 1 - Permutation in a String
-```js
+```
 /** Given a string and a pattern, find out if the string contains any permutation
  * of the pattern.
  *
@@ -499,7 +499,7 @@ const length_of_longest_substring = function(arr, k) {
  *    return false
  *  */
 ```
-```js
+```
 Example:
 Input: String="oidbcaf", Pattern="abc"
 Output: true
@@ -555,7 +555,7 @@ function find_permutation(string, pattern) {
 > **TC:O(N + M)**<br>
 > **SC: O(M)**
 ### Problem 2 - String Anagrams
-```js
+```
 /** Given a string and a pattern, find all anagrams of the pattern in the given string.
  * Input: String and Pattern
  * Output: Starting indices of the anagrams in the string
@@ -582,7 +582,7 @@ function find_permutation(string, pattern) {
  *
  */
 ```
-```js
+```
 **Example 1**
 Input: String="ppqp", Pattern="pq"
 Output: [1, 2]
@@ -638,10 +638,10 @@ function find_string_anagrams(str, pattern) {
 > **TC: O(N + M)**<br>
 > **SC: O(M)**
 ### Problem 3 - Smallest Window containing Substring 
-```js
+```
 Given a string and a pattern, find the smallest substring in the given string which has all the character occurrences of the given pattern.
 ```
-```js
+```
 **Example 1**
 Input: String="aabdec", Pattern="abc"
 Output: "abdec"

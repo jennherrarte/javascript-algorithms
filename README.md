@@ -1,4 +1,9 @@
 
+*This project uses [Jest](https://github.com/facebook/jest) for writing the tests.*
+### Example 
+```
+jest --watch sliding_window_1_js
+```
 # Grokking the Coding Interview Patterns
 
 https://www.educative.io/courses/grokking-the-coding-interview

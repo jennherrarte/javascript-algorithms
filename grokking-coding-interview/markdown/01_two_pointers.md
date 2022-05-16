@@ -61,7 +61,9 @@ function pair_with_target_sum(arr, targetSum) {
 >**SC:O(1)**
 ### Remove Duplicates 
 ```
-Given an array of sorted numbers, remove all duplicates from it. You should not use any extra space; after removing the duplicates in-place return the length of the subarray that has no duplicate in it.
+Given an array of sorted numbers, remove all duplicates from it. 
+You should not use any extra space; after removing the duplicates 
+in-place return the length of the subarray that has no duplicate in it.
 ```
 ```
 **Exmaple 1:**
@@ -99,7 +101,8 @@ function remove_duplicates(arr) {
 >**SC:O(1)**
 ### Squaring a Sorted Array 
 ```
-Given a sorted array, create a new array containing squares of all the numbers of the input array in the sorted order.
+Given a sorted array, create a new array containing squares 
+of all the numbers of the input array in the sorted order.
 ```
 ```
 **Example 1:**
@@ -202,7 +205,11 @@ let right = arr.length - 1
 
 ### Triplet Sum Close to Target 
 ```
-Given an array of unsorted numbers and a target number, find a triplet in the array whose sum is as close to the target number as possible, return the sum of the triplet. If there are more than one such triplet, return the sum of the triplet with the smallest sum.
+Given an array of unsorted numbers and a target number, 
+find a triplet in the array whose sum is as close
+to the target number as possible, return the sum of the triplet.
+If there are more than one such triplet, 
+return the sum of the triplet with the smallest sum.
 ```
 ```
 **Example 1:**
@@ -306,7 +313,8 @@ function triplet_with_smaller_sum (arr, target) {
 ```
 ### Subarrays with Product Less than a Target 
 ```
-Given an array with positive numbers and a positive target number, find all of its contiguous subarrays whose product is less than the target number.
+Given an array with positive numbers and a positive target number, find all of its contiguous 
+subarrays whose product is less than the target number.
 ```
 ```
 **Example 1:**
@@ -351,7 +359,9 @@ function find_product_subarray (arr, target) {
 
 ### Dutch National Flag Problem
 ```
-Given an array containing 0s, 1s and 2s, sort the array in-place. You should treat numbers of the array as objects, hence, we can’t count 0s, 1s, and 2s to recreate the array.
+Given an array containing 0s, 1s and 2s, sort the array in-place.
+You should treat numbers of the array as objects,
+hence, we can’t count 0s, 1s, and 2s to recreate the array.
 ```
 ```
 **Example 1:**

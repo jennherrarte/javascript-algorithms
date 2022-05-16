@@ -1,4 +1,3 @@
-# Algorithms
 
 # Grokking the Coding Interview Patterns
 

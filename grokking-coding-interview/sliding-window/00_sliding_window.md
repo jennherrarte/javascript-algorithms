@@ -381,37 +381,28 @@ Output: 3
 Explanation: Replace the 'b' or 'd' with 'c' to have the longest repeating substring "ccc".
 ```
 ```js
-var characterReplacement = function(str, k) {
-    if(str.length === 0 || str.length === null) {
-        return 0
+function length_of_longest_substring(str, k) {
+  let windowStart = 0,
+    maxLength = 0,
+    maxRepeatLetterCount = 0,
+    frequencyMap = {};
+
+  for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
+    const rightChar = str[windowEnd];
+    if (!(rightChar in frequencyMap)) {
+      frequencyMap[rightChar] = 0;
     }
-    
-    let maxLength = -Infinity,
-        charMap = {},
-        windowStart = 0,
-        maxRepeatLetter = 0
-    
-    for(let windowEnd = 0; windowEnd < str.length; windowEnd++) {
-        let rightChar = str[windowEnd];
-        
-        if(!(rightChar in charMap)) {
-            charMap[rightChar] = 0;
-        }
-        
-        charMap[rightChar] += 1
-        maxRepeatLetter = Math.max(maxRepeatLetter, charMap[rightChar])
-        
-        if(windowEnd - windowStart + 1 - maxRepeatLetter > k) {
-            
-            let leftChar = str[windowStart];
-            charMap[leftChar] -= 1
-            windowStart++
-        }
-        maxLength = Math.max(maxLength, windowEnd - windowStart + 1)
+    frequencyMap[rightChar] += 1;
+    maxRepeatLetterCount = Math.max(maxRepeatLetterCount, frequencyMap[rightChar]);
+    if ((windowEnd - windowStart + 1 - maxRepeatLetterCount) > k) {
+      leftChar = str[windowStart];
+      frequencyMap[leftChar] -= 1;
+      windowStart += 1;
     }
-    
-    return maxLength;
-};
+    maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+  }
+  return maxLength;
+}
 ```
 > **TC: O(N)**<br>
 > **SC: O(1)**
@@ -446,7 +437,7 @@ Output: 9
 Explanation: Replace the '0' at index 6, 9, and 10 to have the longest contiguous subarray of 1s having length 9.
 ```
 ```js
-const length_of_longest_substring = function(arr, k) {
+function length_of_longest_substring (arr, k) {
 
   if(arr.length === 0 || arr.length === null) {
     return 0;
@@ -523,42 +514,43 @@ function find_permutation(string, pattern) {
     let windowStart = 0;
     let match = 0;
     let charMap = {};
-    
-    for(i = 0; i < pattern.length; i++) {
+
+    for (i = 0; i < pattern.length; i++) {
         let char = pattern[i];
-        if(!(char in charMap)) {
+        if (!(char in charMap)) {
             charMap[char] = 0
-        
-        charMap[char] += 1;
-    };
-    
-    for(let windowEnd = 0; windowEnd < string.length; windowEnd++) {
+
+            charMap[char] += 1;
+        };
+    }
+    for (let windowEnd = 0; windowEnd < string.length; windowEnd++) {
         let rightChar = string[windowEnd]
-        
-        if(rightChar in charMap) {
+
+        if (rightChar in charMap) {
             charMap[rightChar] -= 1
-            if(charMap[rightChar] === 0) {
+            if (charMap[rightChar] === 0) {
                 match += 1
             }
         };
-           
-        if(match === Object.keys(charMap).length) {
+
+        if (match === Object.keys(charMap).length) {
             return true
         }
-        
-        if(windowEnd >= pattern.length - 1) {
+
+        if (windowEnd >= pattern.length - 1) {
             let leftChar = string[windowStart];
             windowStart += 1;
-            
-            if(leftChar in charMap) {
-                if(charMap[leftChar] === 0) {
-                    match =- 1
+
+            if (leftChar in charMap) {
+                if (charMap[leftChar] === 0) {
+                    match = -1
                 }
                 charMap[leftChar] += 1
             }
         }
     }
     return false;
+}
 
 ```
 > **TC:O(N + M)**<br>

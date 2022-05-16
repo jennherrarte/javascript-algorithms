@@ -8,9 +8,9 @@
 5. [No-repeat Substring (hard)](#No-Repeat-Substring)
 6. [Longest Substring with Same Letters after Replacement (hard)](#Longest-Substring-with-Same-Letters-After-Replacement)
 7. [Longest Subarray with Ones after Replacement](#Longest-Subarray-with-Ones-after-Replacement)
-8. [Problem 1](#Problem-1-Permutation-in-a-String)
-9. [Problem 2](#Problem-2-String-Anagrams)
-10. [Problem 3](#Problem-3-Smallest-Window-containing-Substring)
+8. [Problem 1 - Permutation-in-a-String](#Problem-1-Permutation-in-a-String)
+9. [Problem 2 - String-Anagrams](#Problem-2-String-Anagrams)
+10. [Problem 3 - Smallest-Window-containing-Substring](#Problem-3-Smallest-Window-containing-Substring)
 11. [Problem 4](#Problem-4)
 
 

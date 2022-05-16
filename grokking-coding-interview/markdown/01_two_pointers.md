@@ -277,40 +277,29 @@ Explanation: There are four triplets whose sum is less than the target:
 ```
 
 ```js
-function triplet_with_smaller_sum (arr, target) {
-	arr.sort((a,b) => a - b)
-	let closestSum = Infinity
-	
-	for(i = 0; i < arr.length - 2; i++) {
-	
-		let left = i + 1
-		let right = arr.length - 1
-		
-		while(left < right) {
-		
-			let sum = arr[i] + arr[left] + arr[right]
-			
-			if (sum === target) {
-				return sum
-			}
-			
-			if(Math.abs(sum - target) < Math.abs(closestSum - target)) {
-				closestSum = target
-			}
-			
-			if(sum > target) {
-				right--
-			} else {
-				left++
-			}
-		}
-	}
-
-	return closestSum
-
+function triplet_with_smaller_sum (nums, target) {
+	    nums.sort((a,b) => a - b);
+    let count= 0;
+  
+    for (let i = 0; i < nums.length - 2; i++) {
+      let left = i + 1;
+      let right = nums.length - 1;
+  
+      while (left < right) {
+        if (nums[i] + nums[left] + nums[right] < target) {
+          count += right - left
+          left++
+        } else {
+          right--
+        }
+      }
+    }
+    return count;
 }
 
 ```
+<**TC: O(n * logN * n) ---> O(n^2)**
+<**SC: O(n)**
 ### Subarrays with Product Less than a Target 
 ```
 Given an array with positive numbers and a positive target number, find all of its contiguous 

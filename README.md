@@ -1,5 +1,4 @@
 # Algorithms
-# Module 1
 
 # Grokking the Coding Interview Patterns
 

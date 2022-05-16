@@ -8,45 +8,45 @@ https://www.educative.io/courses/grokking-the-coding-interview
 
 ### Pattern: Sliding Window (11) Required
 
-- [ ] Maximum Sum Subarray of Size K (easy): new (​link​)
+- [x] Maximum Sum Subarray of Size K (easy): new (​link​)
       Done: 
-- [ ] Smallest Subarray with a given sum (easy): LC 209
+- [x] Smallest Subarray with a given sum (easy): LC 209
       Done: 
-- [ ] Longest Substring with K Distinct Characters (medium): LC 340
+- [x] Longest Substring with K Distinct Characters (medium): LC 340
       Done:
-- [ ] Fruits into Baskets (medium): LC 904
+- [x] Fruits into Baskets (medium): LC 904
       Done: 
-- [ ] No-repeat Substring (hard): LC 3
+- [x] No-repeat Substring (hard): LC 3
       Done: 
-- [ ] Longest Substring with Same Letters after Replacement (hard)
+- [x] Longest Substring with Same Letters after Replacement (hard)
       Done: 
-- [ ] LC 424 Longest Subarray with Ones after Replacement (hard)
+- [x] LC 424 Longest Subarray with Ones after Replacement (hard)
       Done: 
-- [ ] LC 1004 Problem Challenge 1: LC 567
+- [x] LC 1004 Problem Challenge 1: LC 567
       Done: 
-- [ ] Problem Challenge 2: LC 438
+- [x] Problem Challenge 2: LC 438
       Done: 
-- [ ] Problem Challenge 3: LC 76
+- [x] Problem Challenge 3: LC 76
       Done:
 - [ ] Problem Challenge 4: LC 30
       Done:
 ### Pattern: Two Pointers (11) Required
 
-- [ ] Pair with Target Sum (easy): LC1
+- [x] Pair with Target Sum (easy): LC1
       Done: 
-- [ ] Remove Duplicates (easy): LC 26
+- [x] Remove Duplicates (easy): LC 26
       Done: 
-- [ ] Squaring a Sorted Array (easy): LC 977
+- [x] Squaring a Sorted Array (easy): LC 977
       Done: 
-- [ ] Triplet Sum to Zero (medium): LC 15
+- [x] Triplet Sum to Zero (medium): LC 15
       Done: 
 - [ ] Triplet Sum Close to Target (medium): LC 16
       Done: 
-- [ ] Triplets with Smaller Sum (medium): LC 259
+- [x] Triplets with Smaller Sum (medium): LC 259
       Done: 
-- [ ] Subarrays with Product Less than a Target (medium): LC 713
+- [x] Subarrays with Product Less than a Target (medium): LC 713
       Done: 
-- [ ] Dutch National Flag Problem (medium): LC 75
+- [x] Dutch National Flag Problem (medium): LC 75
       Done:
 - [ ] Problem Challenge 1: LC 18
       Done: 

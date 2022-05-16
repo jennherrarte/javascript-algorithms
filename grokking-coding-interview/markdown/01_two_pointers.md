@@ -3,7 +3,7 @@ Given an array of sorted numbers and a target sum, find a pair in the array whos
 
 Write a function to return the indices of the two numbers (i.e. the pair) such that they add up to the given target.
 
-```
+```js
 function pair_with_target_sum(arr, targetSum) {
 
  if(arr.length === 0 || arr.length === null) {
@@ -35,7 +35,7 @@ function pair_with_target_sum(arr, targetSum) {
 
 Given an array of sorted numbers, remove all duplicates from it. You should not use any extra space; after removing the duplicates in-place return the length of the subarray that has no duplicate in it.
 
-```
+```js
 function remove_duplicates(arr) {
 
   if(arr.length === 0 || arr.length === null) {
@@ -59,7 +59,7 @@ function remove_duplicates(arr) {
 ### Squaring a Sorted Array 
 Given a sorted array, create a new array containing squares of all the numbers of the input array in the sorted order.
 
-``` 
+``` js
 function make_squares(arr) {
 	let squares = Array(n).fill(0)
 	let n = arr.length
@@ -89,7 +89,7 @@ function make_squares(arr) {
 
 Given an array of unsorted numbers, find all unique triplets in it that add up to zero.
 
-```
+```js
 function find_triplets(arr) {
 	let triplets = [ ];
 	arr.sort((a,b) => a - b)
@@ -134,7 +134,7 @@ let right = arr.length - 1
 
 Given an array arr of unsorted numbers and a target sum, count all triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j, and k are three different indices. Write a function to return the count of such triplets.
 
-``` 
+```js
 function triplet_with_smaller_sum (arr, target) {
 	arr.sort((a,b) => a - b)
 	let closestSum = Infinity
@@ -176,7 +176,7 @@ function triplet_with_smaller_sum (arr, target) {
 
 Given an array with positive numbers and a positive target number, find all of its contiguous subarrays whose product is less than the target number.
 
-```
+```js
 function find_product_subarray (arr, target) {
    let result = [],
         product = 1,
@@ -210,7 +210,7 @@ space: O(N^3) at most O(n^2) space for output list and each subarray can take O(
 
 Given an array containing 0s, 1s and 2s, sort the array in-place. You should treat numbers of the array as objects, hence, we can’t count 0s, 1s, and 2s to recreate the array.
 
-```
+```js
 function dutch_flag_sort(arr) {
   // all elements < low are 0, and all elements > high are 2
   // all elements from >= low < i are 1
@@ -234,4 +234,4 @@ function dutch_flag_sort(arr) {
 }
 
 
-```x
+```

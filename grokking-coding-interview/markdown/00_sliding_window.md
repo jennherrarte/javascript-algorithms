@@ -476,7 +476,7 @@ function find_permutation(string, pattern) {
 ### Smallest Window containing Substring 
 Given a string and a pattern, find the smallest substring in the given string which has all the character occurrences of the given pattern.
 
-```
+```js
 function find_substring(str, pattern) {
 	let windowStart = 0;
 	let matched = 0;

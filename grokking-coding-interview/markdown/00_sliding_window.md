@@ -477,7 +477,7 @@ const length_of_longest_substring = function(arr, k) {
 > **TC: O(N)**<br>
 > **SC: O(1)**
 
-### Problem 1 - Permutation in a String
+### Problem 1 Permutation in a String
 ```
 /** Given a string and a pattern, find out if the string contains any permutation
  * of the pattern.
@@ -563,7 +563,7 @@ function find_permutation(string, pattern) {
 ```
 > **TC:O(N + M)**<br>
 > **SC: O(M)**
-### Problem 2 - String Anagrams
+### Problem 2 String Anagrams
 ```
 /** Given a string and a pattern, find all anagrams of the pattern in the given string.
  * Input: String and Pattern
@@ -646,7 +646,7 @@ function find_string_anagrams(str, pattern) {
 ```
 > **TC: O(N + M)**<br>
 > **SC: O(M)**
-### Problem 3 - Smallest Window containing Substring 
+### Problem 3 Smallest Window containing Substring 
 ```
 Given a string and a pattern, find the smallest substring in the given string which has all the character occurrences of the given pattern.
 ```

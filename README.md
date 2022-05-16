@@ -1,5 +1,3 @@
-# Algorithms
-# Module 1
 
 # Grokking the Coding Interview Patterns
 
@@ -40,9 +38,9 @@ https://www.educative.io/courses/grokking-the-coding-interview
       Done: 
 - [x] Triplet Sum to Zero (medium): LC 15
       Done: 
-- [ ] Triplet Sum Close to Target (medium): LC 16
+- [x] Triplet Sum Close to Target (medium): LC 16
       Done: 
-- [x] Triplets with Smaller Sum (medium): LC 259
+- [ ] Triplets with Smaller Sum (medium): LC 259
       Done: 
 - [x] Subarrays with Product Less than a Target (medium): LC 713
       Done: 

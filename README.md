@@ -42,7 +42,7 @@ https://www.educative.io/courses/grokking-the-coding-interview
       Done: 
 - [ ] Triplet Sum Close to Target (medium): LC 16
       Done: 
-- [x] Triplets with Smaller Sum (medium): LC 259
+- [ ] Triplets with Smaller Sum (medium): LC 259
       Done: 
 - [x] Subarrays with Product Less than a Target (medium): LC 713
       Done: 

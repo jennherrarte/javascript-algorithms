@@ -40,7 +40,7 @@ https://www.educative.io/courses/grokking-the-coding-interview
       Done: 
 - [x] Triplet Sum to Zero (medium): LC 15
       Done: 
-- [ ] Triplet Sum Close to Target (medium): LC 16
+- [x] Triplet Sum Close to Target (medium): LC 16
       Done: 
 - [ ] Triplets with Smaller Sum (medium): LC 259
       Done: 

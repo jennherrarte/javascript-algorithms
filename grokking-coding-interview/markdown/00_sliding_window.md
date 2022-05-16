@@ -62,7 +62,7 @@ function max_sub_array_of_size_k(k, arr) {
 
 ```
 
-> Time: O(N)
+> Time: O(N)<br>
 > Space: O(1)
 
 ### Smallest Subarray with a given Sum

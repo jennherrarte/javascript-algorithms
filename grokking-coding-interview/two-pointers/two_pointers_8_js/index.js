@@ -1,6 +1,8 @@
-function dutch_flag_sort(arr) { // not  working
-    // all elements < low are 0, and all elements > high are 2
-    // all elements from >= low < i are 1
+function dutch_flag_sort(arr) { 
+
+  if(arr.length === 0 || arr.length === null) {
+    return 0
+  }
     let low = 0,
       high = arr.length - 1,
       i = 0;
@@ -18,6 +20,8 @@ function dutch_flag_sort(arr) { // not  working
         high -= 1;
       }
     }
+
+    return arr
   }
 
   module.exports = dutch_flag_sort;

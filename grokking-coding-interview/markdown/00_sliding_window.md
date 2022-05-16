@@ -45,7 +45,8 @@
 **Example 1:**
 Input: [2, 1, 5, 1, 3, 2], k=3
 Output: 9
-Explanation: Subarray with maximum sum is [5, 1, 3].
+Explanation: Subarray with maximum sum is [5, 1, 3]. 
+
 **Example 2:**
 Input: [2, 3, 4, 1, 5], k=2
 Output: 7
@@ -100,10 +101,12 @@ function max_sub_array_of_size_k(k, arr) {
 Input: [2, 1, 5, 2, 3, 2], S=7
 Output: 2
 Explanation: The smallest subarray with a sum greater than or equal to '7' is [5, 2].
+
 **Example 2:**
 Input: [2, 1, 5, 2, 8], S=7
 Output: 1
 Explanation: The smallest subarray with a sum greater than or equal to '7' is [8].
+
 **Example 3:**
 Input: [3, 4, 1, 1, 6], S=8
 Output: 3
@@ -164,10 +167,11 @@ function smallest_subarray_with_given_sum(s, arr) {
 // If the window contains more than K distinct characters, we want to shrink the window to see if we can lower the distinct characters we find
 ```
 ```
-**Example1:**
+**Example 1:**
 Input: String="araaci", K=2
 Output: 4
 Explanation: The longest substring with no more than '2' distinct characters is "araa".
+
 **Example 2:**
 Input: String="araaci", K=1
 Output: 2
@@ -229,10 +233,11 @@ function longest_substring_with_k_distinct(str, k) {
  * */
 ```
 ```
-**Example:**
+**Example 1:**
 Input: Fruit=['A', 'B', 'C', 'A', 'C']
 Output: 3
 Explanation: We can put 2 'C' in one basket and one 'A' in the other from the subarray ['C', 'A', 'C']
+
 **Example 2:**
 Input: Fruit=['A', 'B', 'C', 'B', 'B', 'C']
 Output: 5
@@ -297,10 +302,11 @@ function fruits_in_a_basket(fruits) {
 */
 ```
 ```
-**Example:**
+**Example 1:**
 Input: String="aabccbb"
 Output: 3
 Explanation: The longest substring without any repeating characters is "abc".
+
 **Example 2:**
 Input: String="abccde"
 Output: 3
@@ -364,10 +370,11 @@ function non_repeat_substring(str) {
  *  */
 ```
 ```
-**Example:**
+**Example 1:**
 Input: String="aabccbb", k=2
 Output: 5
 Explanation: Replace the two 'c' with 'b' to have a longest repeating substring "bbbbb".
+
 **Example 2:**
 Input: String="abccde", k=1
 Output: 3
@@ -428,10 +435,11 @@ var characterReplacement = function(str, k) {
  *  */
 ```
 ```
-**Example:**
+**Example 1:**
 Input: Array=[0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1], k=2
 Output: 6
 Explanation: Replace the '0' at index 5 and 8 to have the longest contiguous subarray of 1s having length 6.
+
 **Example 2:**
 Input: Array=[0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1], k=3
 Output: 9
@@ -500,10 +508,11 @@ const length_of_longest_substring = function(arr, k) {
  *  */
 ```
 ```
-Example:
+Example 1:
 Input: String="oidbcaf", Pattern="abc"
 Output: true
 Explanation: The string contains "bca" which is a permutation of the given pattern.
+
 Example 2:
 Input: String="odicf", Pattern="dc"
 Output: false
@@ -583,7 +592,7 @@ function find_permutation(string, pattern) {
  */
 ```
 ```
-**Example 1**
+**Example 1:**
 Input: String="ppqp", Pattern="pq"
 Output: [1, 2]
 Explanation: The two anagrams of the pattern in the given string are "pq" and "qp".
@@ -642,12 +651,12 @@ function find_string_anagrams(str, pattern) {
 Given a string and a pattern, find the smallest substring in the given string which has all the character occurrences of the given pattern.
 ```
 ```
-**Example 1**
+**Example 1:**
 Input: String="aabdec", Pattern="abc"
 Output: "abdec"
 Explanation: The smallest substring having all characters of the pattern is "abdec"
 
-**Example 2**
+**Example 2:**
 Input: String="aabdec", Pattern="abac"
 Output: "aabdec"
 Explanation: The smallest substring having all character occurrences of the pattern is "aabdec"

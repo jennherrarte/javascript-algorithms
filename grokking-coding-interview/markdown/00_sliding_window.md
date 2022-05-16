@@ -61,6 +61,10 @@ function max_sub_array_of_size_k(k, arr) {
 }
 
 ```
+
+> Time: O(N)
+> Space: O(1)
+
 ### Smallest Subarray with a given Sum
 ```js
 /** Given an array of positive numbers and a positive number ‘S,’ find the length of the
@@ -258,7 +262,6 @@ function non_repeat_substring(str) {
 
 ### Longest Substring with Same Letters after Replacement
 ```js
-//06/05/21
 /** Given a string with lowercase letters only, if you are allowed to replace
  * no more than ‘k’ letters with any letter, find the length of the longest
  * substring having the same letters after replacement.
@@ -324,7 +327,6 @@ var characterReplacement = function(str, k) {
 
 ### Longest Subarray with Ones after Replacement
 ```js
-//06/07/21
 /** Given an array containing 0s and 1s, if you are allowed to replace no more than
  *  ‘k’ 0s with 1s, find the length of the longest contiguous subarray having all 1s.
  * Output: maxLength - of subarray having all 1s (after replacement)
@@ -371,7 +373,7 @@ const length_of_longest_substring = function(arr, k) {
 };
 ```
 
-### Problem 1
+### Problem 1 - Permutation in a String
 ```js
 /** Given a string and a pattern, find out if the string contains any permutation
  * of the pattern.
@@ -444,7 +446,7 @@ function find_permutation(string, pattern) {
 
 ```
 
-### Problem 2
+### Problem 2 - String Anagrams
 ```js
 /** Given a string and a pattern, find all anagrams of the pattern in the given string.
  * Input: String and Pattern
@@ -473,7 +475,7 @@ function find_permutation(string, pattern) {
  */
 
 ```
-### Smallest Window containing Substring 
+### Problem 3 - Smallest Window containing Substring 
 Given a string and a pattern, find the smallest substring in the given string which has all the character occurrences of the given pattern.
 
 ```js
@@ -530,7 +532,7 @@ function find_substring(str, pattern) {
 
 ```
 
-### Problem 4
+### Problem 4 - Problem Challenge 4
 ```js
 
 ``` 

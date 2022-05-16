@@ -8,9 +8,9 @@
 5. [No-repeat Substring (hard)](#No-Repeat-Substring)
 6. [Longest Substring with Same Letters after Replacement (hard)](#Longest-Substring-with-Same-Letters-After-Replacement)
 7. [Longest Subarray with Ones after Replacement](#Longest-Subarray-with-Ones-after-Replacement)
-8. [Problem 1](#Problem-1)
-9. [Problem 2](#Problem-2)
-10. [Problem 3](#Problem-3)
+8. [Problem 1](#Problem-1-Permutation-in-a-String)
+9. [Problem 2](#Problem-2-String-Anagrams)
+10. [Problem 3](#Problem-3-Smallest-Window-containing-Substring)
 11. [Problem 4](#Problem-4)
 
 
@@ -508,12 +508,12 @@ const length_of_longest_substring = function(arr, k) {
  *  */
 ```
 ```
-Example 1:
+**Example 1:**
 Input: String="oidbcaf", Pattern="abc"
 Output: true
 Explanation: The string contains "bca" which is a permutation of the given pattern.
 
-Example 2:
+**Example 2:**
 Input: String="odicf", Pattern="dc"
 Output: false
 Explanation: No permutation of the pattern is present in the given string as a substring.

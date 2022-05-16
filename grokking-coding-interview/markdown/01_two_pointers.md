@@ -1,4 +1,21 @@
-### Pair with Target Sum (easy)
+# Two Pointers
+
+## Table of contents
+1. [Pair with Target Sum (easy)](#Pair-with-Target-Sum)
+2. [Separate Duplicates (easy)](#Separate-Duplicates)
+3. [Squaring a Sorted Array (easy)](#Squaring-a-Sorted-Array)
+4. [Triplet Sum to Zero (medium)](#Triplet-Sum-to-Zero)
+5. [Triplet Sum Close to Target (medium)](#Triplet-Sum-Close-to-Target)
+6. [Triplets with Smaller Sum (medium)](#Triplets-with-Smaller-Sum)
+7. [Subarrays with Product Less than a Target (medium)](#Subarrays-with-Product-Less-than-a-Target)
+8. [Dutch National Flag Problem (medium)](#Dutch-National-Flag-Problem)
+9. [Problem 1 - Quadruple Sum to Target (medium)](#Problem-1-Quadruple-Sum-to-Target)
+10.[Problem 2 - Comparing Strings containing Backspaces (medium)](#Problem-2-Comparing-Strings-containing-Backspaces)
+11.[Problem 3 - Minimum Window Sort (medium)](#Problem-3-Minimum-Window-Sort)
+
+
+
+### Pair with Target Sum 
 Given an array of sorted numbers and a target sum, find a pair in the array whose sum is equal to the given target.
 
 Write a function to return the indices of the two numbers (i.e. the pair) such that they add up to the given target.
@@ -31,7 +48,7 @@ function pair_with_target_sum(arr, targetSum) {
 
 
 ```
-### Remove Duplicates (easy)
+### Remove Duplicates 
 
 Given an array of sorted numbers, remove all duplicates from it. You should not use any extra space; after removing the duplicates in-place return the length of the subarray that has no duplicate in it.
 

@@ -62,8 +62,8 @@ function max_sub_array_of_size_k(k, arr) {
 
 ```
 
-> Time: O(N)<br>
-> Space: O(1)
+> **Time: O(N)<br>
+> Space: O(1)**
 
 ### Smallest Subarray with a Greater Sum
 ```js
@@ -104,8 +104,8 @@ function smallest_subarray_with_given_sum(s, arr) {
 }
 
 ```
-> Time: O(N) two loops O(n + n) but asymptotically O(n)<br>
-> Space: O(1)
+> **Time: O(N) two loops O(n + n) but asymptotically O(n)<br>
+> Space: O(1)**
 ### Longest Substring with K Distinct Characters
 ```js
 /** Given a string, find the length of the longest substring in it with no more than K distinct
@@ -161,8 +161,8 @@ function longest_substring_with_k_distinct(str, k) {
 }
 
 ```
-> Time: O(N)<br>
-> Space: O(M)
+> Time: **O(N)<br>
+> Space: O(M)**
 
 ### Fruits into Baskets
 ```js
@@ -218,8 +218,8 @@ function fruits_in_a_basket(fruits) {
 };
 
 ```
-> Time: O(N) - O(N + N) which is equivalent to O(N)
-> Space: O(1) - as there can be a maximum of three types of fruits stored in the frequency map.
+> **Time: O(N) - O(N + N) which is equivalent to O(N)<br>
+> Space: O(1) - as there can be a maximum of three types of fruits stored in the frequency map.**
 ### No-repeat Substring
 ```js
 /** Find length of the longest substring, which has no repeating characters.
@@ -265,8 +265,8 @@ function non_repeat_substring(str) {
 
 ```
 
-> Time: O(N) <br>
-> Space: O(K) / O(1) since there is a set 26 distinct english letters to fit in the hashmap
+> **Time: O(N) <br>
+> Space: O(K) / O(1) since there is a set 26 distinct english letters to fit in the hashmap**
 
 ### Longest Substring with Same Letters after Replacement
 ```js
@@ -332,8 +332,8 @@ var characterReplacement = function(str, k) {
     return maxLength;
 };
 ```
-> TC: O(N)<br>
-> SC: O(1)
+> **TC: O(N)<br>
+> SC: O(1)**
 ### Longest Subarray with Ones after Replacement
 ```js
 /** Given an array containing 0s and 1s, if you are allowed to replace no more than
@@ -381,8 +381,8 @@ const length_of_longest_substring = function(arr, k) {
     return maxLength;
 };
 ```
-> TC: O(N)<br>
-> SC: O(1)
+> **TC: O(N)<br>
+> SC: O(1)**
 
 ### Problem 1 - Permutation in a String
 ```js
@@ -456,8 +456,8 @@ function find_permutation(string, pattern) {
     return false;
 
 ```
-> TC: O(N + M)<br>
-> SC: O(M)
+> TC: **O(N + M)<br>
+> SC: O(M)**
 ### Problem 2 - String Anagrams
 ```js
 /** Given a string and a pattern, find all anagrams of the pattern in the given string.
@@ -487,8 +487,8 @@ function find_permutation(string, pattern) {
  */
 
 ```
-> TC: O(N + M)<br>
-> SC: O(M)
+> **TC: O(N + M)<br>
+> SC: O(M)**
 ### Problem 3 - Smallest Window containing Substring 
 Given a string and a pattern, find the smallest substring in the given string which has all the character occurrences of the given pattern.
 
@@ -546,10 +546,11 @@ function find_substring(str, pattern) {
 
 ```
 
-> TC: O(N + M)<br>
-> SC: O(M)
+> **TC: O(N + M)<br>
+> SC: O(M)**
 
 ### Problem 4 - Problem Challenge 4
 ```js
+
 
 ``` 

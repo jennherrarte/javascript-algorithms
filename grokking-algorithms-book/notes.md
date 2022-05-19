@@ -1,7 +1,6 @@
 ### Chapter 1 - Intro  to Algorithms 
 
 ### Chapter 2 - Selection Sort  
-```
 - arrays and linked lists are good for storing multiple element
 ### Arrays
 - arrays allow for fast reads, better for random acccess

@@ -28,7 +28,7 @@ Looping(for, while)
 
 Outside Function Call(function())
 ```
-### Rule Book 
+### Rules 
 ```
 Rule 1 - Always worst case
 

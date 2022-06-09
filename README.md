@@ -45,15 +45,15 @@ https://www.educative.io/courses/grokking-the-coding-interview
       Done: 
 - [x] Triplet Sum Close to Target (medium): LC 16
       Done: 
-- [ ] Triplets with Smaller Sum (medium): LC 259
+- [x] Triplets with Smaller Sum (medium): LC 259
       Done: 
 - [x] Subarrays with Product Less than a Target (medium): LC 713
       Done: 
 - [x] Dutch National Flag Problem (medium): LC 75
       Done:
-- [ ] Problem Challenge 1: LC 18
+- [x] Problem Challenge 1: LC 18
       Done: 
-- [ ] Problem Challenge 2: LC 844
+- [x] Problem Challenge 2: LC 844
       Done:
 - [ ] Problem Challenge 3: LC 581
       Done:

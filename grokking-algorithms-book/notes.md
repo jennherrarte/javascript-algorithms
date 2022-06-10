@@ -28,3 +28,15 @@ Run times for common operations <br>
 - **reading** - O(n) <br>
 - **insertion** - O(1) <br>
 - **deletion** - O(1) <br>
+
+## Chapter 3 - Recursion 
+- recursion is  when a functional calls itself
+- every recursive function has two parts:  the base case and recursive case 
+- recursive case - when the functional calls itself 
+- base case - when the function doesn't call itself again (avoid infinite loop)
+- stack - when you call a function from  another function, the calling function is paused in a  partially completed space
+- stack has two operations: push and pop 
+- all function calls go onto the call stack
+- call stack can get very large which takes up a lot of memory
+
+

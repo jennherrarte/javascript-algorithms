@@ -522,3 +522,66 @@ function get_valid_idx(str, index) {
 ```
 >**TC:O(M+N)**<br>
 >**SC:O(1)**
+
+### Problem 3 Minimum Window Sort 
+
+```
+Given an array, find the length of the smallest subarray in it which when sorted will sort the whole array.
+```
+
+```
+**Example 1:**
+Input: [1, 2, 5, 3, 7, 10, 9, 12]
+Output: 5
+
+**Example 2:**
+Input: [1, 3, 2, 0, -1, 7, 10]
+Output: 5
+
+**Example 3:**
+Input: [1, 2, 3]
+Output: 0
+
+```
+```js
+
+function min_window_sort(arr) {
+
+  let low = 0
+  let high = arr.length - 1
+ 
+  while(low < arr.length - 1 && arr[low] <= arr[low + 1]) {
+    low++
+  }
+ 
+  if(low === arr.length - 1) {
+    return 0
+  }
+
+ while(high > 0 && arr[high] >= arr[high - 1]) {
+   high--
+ }
+
+ let subarrayMax = -Infinity
+ let subarrayMin = Infinity
+
+ for(i = low; i < high + 1; i++) {
+   subarrayMax = Math.max(subarrayMax, arr[i])
+   subarrayMin = Math.min(subarrayMin, arr[i])
+ }
+ 
+ while(low > 0 && arr[low - 1] > subarrayMin) {
+   low--
+ }
+
+while(high < arr.length - 1 && arr[high + 1] < subarrayMax) {
+  high++
+}
+
+return high - low + 1
+
+
+}
+```
+>**TC:O(N)**<br>
+>**SC:O(1)**

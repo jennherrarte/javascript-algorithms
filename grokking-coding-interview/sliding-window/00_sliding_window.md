@@ -11,7 +11,7 @@
 8. [Problem 1 - Permutation-in-a-String](#Problem-1-Permutation-in-a-String)
 9. [Problem 2 - String-Anagrams](#Problem-2-String-Anagrams)
 10. [Problem 3 - Smallest-Window-containing-Substring](#Problem-3-Smallest-Window-containing-Substring)
-11. [Problem 4](#Problem-4)
+11. [Problem 4 - Words Concatenation](#Problem-4-Word-Concatenation)
 
 
 ### Maximum Sum Subarray of Size K
@@ -711,8 +711,76 @@ function find_substring(str, pattern) {
 > **TC: O(N + M)**<br>
 > **SC: O(M)**
 
-### Problem 4 - Problem Challenge 4
+### Problem 4 Words Concatenation
+```
+Given a string and a list of words, find all the starting indices of substrings in the given string that are a concatenation of all the given words exactly once without any overlapping of words. It is given that all words are of the same length.
+```
+```
+**Example 1:**
+Input: String="catfoxcat", Words=["cat", "fox"]
+Output: [0, 3]
+
+**Example 2:**
+Input: String="catcatfoxfox", Words=["cat", "fox"]
+Output: [3]
+```
 ```js
+function find_word_concat(str, words) {
+    let wordFreq = {}; // how many times we need to see  our words  
+    
+    words.forEach((word) => { // add  all words in array to  wordFrequency 
+        if(!(word in wordFreq)) {
+            wordFreq[word] = 0
+        }
 
+        wordFreq[word] += 1
+    });
 
+    let resultIndices = []; // array to store indices
+
+    // we need these two values  to start outer loop 
+    let wordCount = words.length;  // how many  words in array. used for  inner loop and when to push index to result array
+    let wordLength = words[0].length;  // how long each word is. used to determine starting and end  index to find word
+
+    // this cycles until we reach the  end point, then returns array
+    for(i = 0; i < (str.length - wordCount * wordLength) + 1; i++) {
+
+        // need this hashmap to start inner loop
+        let wordsSeen = {};  // how many times we see each word cycling through each index
+
+        // start innerl loop
+        for(j = 0; j < wordCount; j++) { // using  word count because we are  onlyl looking for two words (for example) and this is zero based 
+
+            // need these variables to find our next  word
+            let nextWordIdx = i + j * wordLength; // starting index using wordLength 
+            let word = str.substring(nextWordIdx,  nextWordIdx + wordLength); // word, using nextwordIdx and wordLength to determine ending index
+
+            if(!(word in wordFreq)) {  // if we don't need this word, break
+                break
+            };
+
+            if(!(word in wordsSeen)) { // if  we need this word but haven't seen it, add it to words seen
+                wordsSeen[word] = 0
+            };
+
+            wordsSeen[word] += 1; // add one
+
+            if(wordsSeen[word] > (wordFreq[word] || 0)) { // if  we have this word  more than we need, break
+                break
+            };
+
+            if(j + 1 === wordCount) { // if we have both words, push index to results array 
+                resultIndices.push(i)
+            }
+        }
+    }
+
+    return resultIndices; // return results array
+}
 ``` 
+
+> **TC: O(N*M*Len)**<br>
+// ‘N’ is the number of characters in the given string, ‘M’ is the total number of words, an ‘Len’ is the length of a word
+> **SC: O(M)**
+
+// at most, we will be storing all the words in the two HashMaps. In the worst case, we also need O(N) space for the resulting list. So, the overall space complexity of the algorithm will be O(M+N)

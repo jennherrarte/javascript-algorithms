@@ -779,8 +779,8 @@ function find_word_concat(str, words) {
 }
 ``` 
 
-> **TC: O(N*M*Len)**<br>
+> **TC: O(N * M * Len)**<br>
 // ‘N’ is the number of characters in the given string, ‘M’ is the total number of words, an ‘Len’ is the length of a word
-> **SC: O(M)**
 
+> **SC: O(M)**<br>
 // at most, we will be storing all the words in the two HashMaps. In the worst case, we also need O(N) space for the resulting list. So, the overall space complexity of the algorithm will be O(M+N)

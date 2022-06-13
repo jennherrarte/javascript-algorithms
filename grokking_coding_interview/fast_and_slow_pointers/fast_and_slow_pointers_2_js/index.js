@@ -49,7 +49,7 @@ function find_start(cycleLength, head) {
 
     while(cycleLength > 0) {
         pointer2 = pointer2.next
-        cycleLength -= 1
+        cycleLength-- 
     }
 
     while(pointer1 !== pointer2) {

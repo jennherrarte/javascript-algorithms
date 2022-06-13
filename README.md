@@ -31,7 +31,7 @@ https://www.educative.io/courses/grokking-the-coding-interview
       Done: 
 - [x] Problem Challenge 3: LC 76
       Done:
-- [ ] Problem Challenge 4: LC 30
+- [x] Problem Challenge 4: LC 30
       Done:
 ### Pattern: Two Pointers (11) Required
 
@@ -55,7 +55,7 @@ https://www.educative.io/courses/grokking-the-coding-interview
       Done: 
 - [x] Problem Challenge 2: LC 844
       Done:
-- [ ] Problem Challenge 3: LC 581
+- [x] Problem Challenge 3: LC 581
       Done:
 
 ### Pattern: Fast & Slow pointers (7) Required

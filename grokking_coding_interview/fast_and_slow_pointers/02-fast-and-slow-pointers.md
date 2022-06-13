@@ -2,6 +2,7 @@
 ## Table of contents
 1. [LinkedList Cycle (easy)](#LinkedList-Cycle)
 1.5 [Length of Linked List Cycle (easy)](#Length-of-Linked-List-Cycle)
+2. [Start of LinkedList Cycle (medium)](#Start-of-LinkedList-Cycle)
 
 ### LinkedList Cycle
 ```
@@ -133,6 +134,60 @@ function count_cycle(slow) {
 
     return cycleLength 
 }
+
+```
+> **TC: O(N)**<br>
+> **SC: O(1)**
+
+### Start of LinkedList Cycle 
+```
+Given the head of a Singly LinkedList that contains a cycle, write a function to find the starting node of the cycle.
+```
+```
+class Node {
+    constructor(value, next = null) {
+        this.value = value
+        this.next = next
+    }
+}
+
+**Example 1:**
+const head = new Node(1);
+    head.next = new Node(2);
+    head.next.next = new Node(3);
+    head.next.next.next = new Node(4);
+    head.next.next.next.next = new Node(5);
+    head.next.next.next.next.next = new Node(6);
+    head.next.next.next.next.next.next = head.next.next;
+
+Output: 3
+
+**Example 2:**
+ const head = new Node(1);
+    head.next = new Node(2);
+    head.next.next = new Node(3);
+    head.next.next.next = new Node(4);
+    head.next.next.next.next = new Node(5);
+    head.next.next.next.next.next = new Node(6);
+    head.next.next.next.next.next.next = head.next.next.next;
+
+Output: 4
+
+**Example 3:**
+  const head = new Node(1);
+    head.next = new Node(2);
+    head.next.next = new Node(3);
+    head.next.next.next = new Node(4);
+    head.next.next.next.next = new Node(5);
+    head.next.next.next.next.next = new Node(6);
+    head.next.next.next.next.next.next = head
+
+Output: 1
+```
+```js
+
+
+
 
 ```
 > **TC: O(N)**<br>

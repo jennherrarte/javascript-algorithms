@@ -3,6 +3,8 @@
 1. [LinkedList Cycle (easy)](#LinkedList-Cycle)
 1.5 [Length of Linked List Cycle (easy)](#Length-of-Linked-List-Cycle)
 2. [Start of LinkedList Cycle (medium)](#Start-of-LinkedList-Cycle)
+3. [Happy Number (medium)](#Happy-Number)
+4. [Middle of the LinkedList (easy)](#Middle-of-the-LinkedList)
 
 ### LinkedList Cycle
 ```
@@ -238,6 +240,85 @@ function find_start(cycleLength, head) {
     return pointer1
 }
 
+```
+> **TC: O(N)**<br>
+> **SC: O(1)**
+
+### Happy Number
+```
+Any number will be called a happy number if, after repeatedly replacing it with a number equal to the sum of the square of all of its digits, leads us to number ‘1’. All other (not-happy) numbers will never reach ‘1’. Instead, they will be stuck in a cycle of numbers which does not include ‘1’.
+```
+```
+**Example 1:**
+Input: 23   
+Output: true (23 is a happy number)  
+
+**Example 2:**
+Input: 12   
+Output: false (12 is not a happy number)  
+```
+```js
+function find_happy_number(num) {
+    let fast = num 
+    let slow = num
+
+    while(true) {
+        fast = find_square(find_square(fast))
+        slow = find_square(slow)
+
+        if(fast === slow) {
+            break
+        }
+    }
+    return slow === 1
+}
+
+function find_square(num) {
+    let sum = 0
+
+    while(num > 0) {
+        digit = num % 10
+        sum += digit * digit 
+        num = Math.floor(num / 10)
+    }
+    return sum 
+}
+```
+> **TC: O(logN)**<br>
+> **SC: O(1)**
+
+### Middle of Linked List
+
+```
+Given the head of a Singly LinkedList, write a method to return the middle node of the LinkedList.
+
+If the total number of nodes in the LinkedList is even, return the second middle node.
+```
+```
+**Example 1:**
+Input: 1 -> 2 -> 3 -> 4 -> 5 -> null
+Output: 3
+
+**Example 2:**
+Input: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null
+Output: 4
+
+**Example 3:**
+Input: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> null
+Output: 4
+```
+```js
+function find_middle_node(head) {
+    let slow = head
+    let fast = head 
+
+    while(fast !== null && fast.next !== null) {
+        slow = slow.next
+        fast = fast.next.next
+    }
+
+    return slow.value
+}
 ```
 > **TC: O(N)**<br>
 > **SC: O(1)**

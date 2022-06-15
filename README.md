@@ -63,11 +63,11 @@ https://www.educative.io/courses/grokking-the-coding-interview
       Done: 
 - [x] Start of LinkedList Cycle (medium): LC 142
       Done:
-- [ ] Happy Number (medium): LC 202
+- [x] Happy Number (medium): LC 202
       Done:
-- [ ] Middle of the LinkedList (easy): LC 876
+- [x] Middle of the LinkedList (easy): LC 876
       Done:
-- [ ] Problem Challenge 1: LC 234
+- [x] Problem Challenge 1: LC 234
 - [ ] Problem Challenge 2: LC 143
 - [ ] Problem Challenge 3: LC 457
 

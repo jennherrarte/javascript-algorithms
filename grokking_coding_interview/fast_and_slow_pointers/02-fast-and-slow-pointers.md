@@ -5,6 +5,7 @@
 2. [Start of LinkedList Cycle (medium)](#Start-of-LinkedList-Cycle)
 3. [Happy Number (medium)](#Happy-Number)
 4. [Middle of the LinkedList (easy)](#Middle-of-the-LinkedList)
+5. [Palindrome LinkedList (medium)](#Palindrome-LinkedList)
 
 ### LinkedList Cycle
 ```
@@ -319,6 +320,76 @@ function find_middle_node(head) {
 
     return slow.value
 }
+```
+> **TC: O(N)**<br>
+> **SC: O(1)**
+
+### Palindrome LinkedList
+```
+Given the head of a Singly LinkedList, write a method to check if the LinkedList is a palindrome or not.
+
+Your algorithm should use constant space and the input LinkedList should be in the original form once the algorithm is finished. The algorithm should have O(N) time complexity where ‘N’ is the number of nodes in the LinkedList
+```
+```
+**Example 1:**
+Input: 2 -> 4 -> 6 -> 4 -> 2 -> null
+Output: true
+
+**Example 2:**
+Input: 2 -> 4 -> 6 -> 4 -> 2 -> 2 -> null
+Output: false
+```
+```js
+
+function is_palindrome(head) {
+    if(head === null || head.next === null) {
+        return  true
+    }
+
+    let fast = head
+    let slow =  head
+
+    while(fast !== null && fast.next !== null) {
+
+        fast = fast.next.next
+        slow = slow.next
+    }
+
+    let reversedHead = reverse(slow)
+    let reversedHeadCopy = reversedHead
+
+    while(reversedHead !== null && head !== null) {
+
+        if(reversedHea.value !== head.value) {
+            break
+        }
+        reversedHead = reversedhead.next
+        head = head.next
+    }
+
+    reverse(reversedHeadcopy)
+
+    if(reverseHead === null || head === null) {
+        return true
+    }
+    
+    return false
+
+}
+
+function reverse(current) {
+    let prev = null
+
+    while(current !== null) {
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
+    }
+    
+    return prev
+}
+
 ```
 > **TC: O(N)**<br>
 > **SC: O(1)**

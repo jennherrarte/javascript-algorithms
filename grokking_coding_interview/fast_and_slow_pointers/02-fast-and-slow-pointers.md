@@ -6,6 +6,7 @@
 3. [Happy Number (medium)](#Happy-Number)
 4. [Middle of the LinkedList (easy)](#Middle-of-the-LinkedList)
 5. [Palindrome LinkedList (medium)](#Palindrome-LinkedList)
+6. [Rearrange a LinkedList (medium)](#Rearrange-a-LinkedList)
 
 ### LinkedList Cycle
 ```
@@ -393,3 +394,89 @@ function reverse(current) {
 ```
 > **TC: O(N)**<br>
 > **SC: O(1)**
+
+### Rearrange a LinkedList 
+
+```
+Given the head of a Singly LinkedList, write a method to modify the LinkedList such that the nodes from the second half of the LinkedList are inserted alternately to the nodes from the first half in reverse order. So if the LinkedList has nodes 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null, your method should return 1 -> 6 -> 2 -> 5 -> 3 -> 4 -> null.
+
+Your algorithm should not use any extra space and the input LinkedList should be modified in-place.
+```
+```
+class Node {
+  constructor(value, next = null) {
+    this.value = value;
+    this.next = next;
+  }
+
+
+  print_list() {
+    temp = this;
+    while (temp !== null) {
+      process.stdout.write(`${temp.value} `);
+      temp = temp.next;
+    }
+    console.log();
+  }
+}
+
+**Example 1:**
+    const head = new Node(2);
+        head.next = new Node(4);
+        head.next.next = new Node(6);
+        head.next.next.next = new Node(8);
+        head.next.next.next.next = new Node(10);
+        head.next.next.next.next.next = new Node(12);
+
+Output: 2 12 4 10 6 8 
+
+```
+```js
+function reorder_linked_list(head) {
+    if(head === null || head.next == null) {
+        return 
+    }
+
+    let fast = head
+    let slow = head
+
+    while(fast !== null && fast.next !== null) {
+        slow = slow.next
+        fast = fast.next.next
+    }
+
+    let secondHalfHead = reverse(slow)
+    let firstHalfHead = head
+
+    while(secondHalfHead !== null && firstHalfHead !== null) {
+        let temp = firstHalfHead.next
+        firstHalfHead.next = secondHalfHead
+        firstHalfHead = temp 
+
+        temp = secondHalfHead.next 
+        secondHalfHead.next = firstHalfHead
+        secondHalfHead = temp
+    }
+
+    if(firstHalfHead !== null) {
+        firstHalfHead.next = null
+    }
+}
+
+function reverse(current) {
+    let prev = null
+
+    while(current !== null) {
+        let next = current.next
+        current.next = prev
+        prev = current 
+        current = next 
+    }
+
+    return prev
+}
+
+```
+> **TC: O(N)**<br>
+> **SC: O(1)**
+

@@ -68,12 +68,12 @@ https://www.educative.io/courses/grokking-the-coding-interview
 - [x] Middle of the LinkedList (easy): LC 876
       Done:
 - [x] Problem Challenge 1: LC 234
-- [ ] Problem Challenge 2: LC 143
+- [x] Problem Challenge 2: LC 143
 - [ ] Problem Challenge 3: LC 457
 
 ### Pattern: Merge Intervals (7) Required
 
-- [ ] Merge Intervals (medium): LC 56
+- [x] Merge Intervals (medium): LC 56
       Done: 
 - [ ] Insert Interval (medium): LC 57
       Done: 

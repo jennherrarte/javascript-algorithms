@@ -8,6 +8,8 @@ jest --watch sliding_window_1_js
 
 https://www.educative.io/courses/grokking-the-coding-interview
 
+https://medium.com/interviewnoodle/grokking-leetcode-a-smarter-way-to-prepare-for-coding-interviews-e86d5c9fe4e1
+
 
 ### Pattern: Sliding Window (11) Required
 

@@ -1,11 +1,5 @@
 # JavaScript Interview Questions & Answers
 
-Credit: [@SudheerJonna]
-
-## Download PDF/Epub formats
-
-You can download the PDF and Epub version of this repository from the latest run on the [actions tab](https://github.com/sudheerj/JavaScript-Interview-Questions/actions).
-
 <div align="center">
     <p>
         <a href="https://www.youtube.com/watch?v=Zb4dPi7CANU">
@@ -9820,3 +9814,4 @@ Even though a promise is resolved immediately, it won't be executed immediately 
 </details>
 ---
 
+Credit: [@SudheerJonna]

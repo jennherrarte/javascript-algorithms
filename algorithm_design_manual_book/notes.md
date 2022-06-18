@@ -122,4 +122,14 @@ in algorithm analysis:
 - Points – Take a cloud of points, and separate them into two groups by drawing a line. Now you have two smaller clouds of points. Point sets are recursive objects. <br>
 - Polygons – Inserting any internal chord between two nonadjacent vertices of a simple polygon on n vertices cuts it into two smaller polygons. Polygons are recursive objects. <br>
 - Strings – Delete the first character from a string, and what do you get? A shorter string. Strings are recursive objects.
+<br>
+<br>
 
+**Summary**
+- An algorithm is a set is a set of steps that will produce a desired outcome based on input, which can be a set of different instances
+- Heuristics can be used as a rule of thumb in algorithms to get an estimation for a 'good enough' answer, aka approximate solutions to complex problems 
+- Heuristics have trade-offs and aren't guaranteed to always produce an accurate result 
+- We also need tools to distinguish correct algorithms from incorrect ones:
+- The primary one of which is called a proof (a chain of reasoning)
+- Counter examples 
+- Before trying to solve a problem, we need to fully understand that the problem is asking and model the problem to a data structure

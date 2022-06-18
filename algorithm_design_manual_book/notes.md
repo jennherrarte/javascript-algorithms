@@ -113,7 +113,7 @@ in algorithm analysis:
 - Recursive descriptions of objects require both decomposition rules and basis cases, namely the specification of the smallest and simplest objects where the de-composition stops
 - These basis cases are usually easily defined
 - Recursive structures occur everywhere in the algorithmic world
-- Each of the abstract structures described above can be thought about recursively
+- Each of the abstract structures described above can be thought about recursively <br>
 **Examples**
 - Permutations – Delete the first element of a permutation of {1, . . . , n} things and you get a permutation of the remaining n − 1 things. Permutations are recursive objects <br>
 - Subsets – Every subset of the elements {1,...,n} contains a subset of {1, . . . , n − 1} made visible by deleting element n if it is present. Subsets are recursive objects. <br>

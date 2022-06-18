@@ -114,7 +114,7 @@ in algorithm analysis:
 - These basis cases are usually easily defined
 - Recursive structures occur everywhere in the algorithmic world
 - Each of the abstract structures described above can be thought about recursively <br>
-**Examples**
+**Examples** <br>
 - Permutations – Delete the first element of a permutation of {1, . . . , n} things and you get a permutation of the remaining n − 1 things. Permutations are recursive objects <br>
 - Subsets – Every subset of the elements {1,...,n} contains a subset of {1, . . . , n − 1} made visible by deleting element n if it is present. Subsets are recursive objects. <br>
 - Trees – Delete the root of a tree and what do you get? A collection of smaller trees. Delete any leaf of a tree and what do you get? A slightly smaller tree. Trees are recursive objects. <br>

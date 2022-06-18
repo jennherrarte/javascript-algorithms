@@ -31,7 +31,7 @@ Ouput: The permutation (reordering) of the input sequence such that a′1 ≤ a�
 - Optimality: Many problems have multiple solutions, for example, “what is a good path to get from city A to city B? Do we need the best path, or will a good path be good enough?
 - Completeness: When there are multiple valid solutions to a problem do we need to find all of them? Will a subset of valid solutions suffice?
 - Accuracy: Many questions don’t have a correct answer. For example, “Will Tommy like a pair of boots or a pair of gloves for Christmas?” A hueristic can improve accuracy in these situations <br>
--Execution time: The primary goal of a heuristic is to provide a quick answer that’s good enough
+- Execution time: The primary goal of a heuristic is to provide a quick answer that’s good enough
 
 -  There is a fundamental difference between algorithms, which always produce a correct result, and heuristics, which may usually do a good job but without providing any guarantee
 - Reasonable-looking algorithms can easily be incorrect 

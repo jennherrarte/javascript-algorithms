@@ -62,7 +62,7 @@ Ouput: The permutation (reordering) of the input sequence such that a′1 ≤ a�
 
 **Counter Examples**
 - The best way to prove that an algorithm is incorrect is to produce an instance in which it yields an incorrect answer 
-- Such instances are called counter-examples, and they have 2 important properties
+- Such instances are called counter-examples, and they have 2 important properties:
 - Verifiability – To demonstrate that a particular instance is a counter-example to a particular algorithm, you must be able to (1) calculate what answer your algorithm will give in this instance, and (2) display a better answer so as to prove the algorithm didn’t find it.
 Since you must hold the given instance in your head to reason about it, an important part of verifiability is. . .
 - Simplicity – Good counter-examples have all unnecessary details boiled away. They make clear exactly why the proposed algorithm fails. Once a counter- example has been found, it is worth simplifying it down to its essence

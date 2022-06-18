@@ -1,7 +1,10 @@
 ### Table of Contents
 1. [Intro to Algorithm Design](#Chapter-1-Intro-to-Algorithm-Design)
 
+------------------------------------
 ### Chapter 1 Intro to Algorithm Design 
+
+Goal - Extract the lessons about how to find counter examples, prove correctness and leverage induction
 
 - An algorithm is a procedure to accomplish a specific task 
 - An algorithm is a procedure that takes any of the possible input instances and transforms it to the desired output

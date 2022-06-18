@@ -1,4 +1,7 @@
-### Chapter 1 - Intro to Algorithm Design 
+### Table of Contents
+1. [Intro to Algorithm Design](#Chapter-1-Intro-to-Algorithm-Design)
+
+### Chapter 1 Intro to Algorithm Design 
 
 - An algorithm is a procedure to accomplish a specific task 
 - An algorithm is a procedure that takes any of the possible input instances and transforms it to the desired output
@@ -7,9 +10,9 @@
 - The issue of finding the best possible answer or achieving maximum efficiency usually arises in industry only after serious performance or legal troubles.
 - An algorithm is specified by describing the complete set of instances it must work on and of its output after running on one of  these  instances. 
 
-**Example**
-Problem: Sorting
-Input: A Sequence of n keys  a1,...,an. 
+**Example** <br>
+Problem: Sorting <br>
+Input: A Sequence of n keys  a1,...,an <br>
 Ouput: The permutation (reordering) of the input sequence such that a′1 ≤ a′2 ≤ ···≤ an−1 ≤ an
 
 - An instance of sorting might be an array of names, like {Mike, Bob, Sally, Jill, Jan}, or a list of numbers like {154, 245, 568, 324, 654, 324}

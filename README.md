@@ -71,7 +71,7 @@ https://medium.com/interviewnoodle/grokking-leetcode-a-smarter-way-to-prepare-fo
       Done:
 - [x] Problem Challenge 1: LC 234
 - [x] Problem Challenge 2: LC 143
-- [ ] Problem Challenge 3: LC 457
+- [x] Problem Challenge 3: LC 457
 
 ### Pattern: Merge Intervals (7) Required
 

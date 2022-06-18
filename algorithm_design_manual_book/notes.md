@@ -83,7 +83,8 @@ in algorithm analysis:
 - Geometric series
 
 **Modeling**
-- Modeling is the art of formulating your application in terms of precisely described, well-understood problems. Proper modeling is the key to applying algorithmic de- sign techniques to real-world problems. Indeed, proper modeling can eliminate the need to design or even implement algorithms, by relating your application to what has been done before
+- Modeling is the art of formulating your application in terms of precisely described, well-understood problems. Proper modeling is the key to applying algorithmic design techniques to real-world problems
+- Proper modeling can eliminate the need to design or even implement algorithms, by relating your application to what has been done before
 - Most algorithms are designed to work on rigorously defined abstract structures such as permutations, graphs, and sets
 - To exploit the algorithms literature, you must learn to describe your problem abstractly, in terms of procedures on fundamental structures
 - Make sure that you model the problem correctly before trying to solve it

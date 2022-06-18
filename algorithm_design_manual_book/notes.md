@@ -98,7 +98,7 @@ in algorithm analysis:
 - Graphs – which represent relationships between arbitrary pairs of objects. Graphs are likely the object in question whenever you seek a “network,” “circuit,” “web,” or “relationship” <br>
 - Points – which represent locations in some geometric space. For example, the locations of McDonald’s restaurants can be described by points on a map/plane. Points are likely the object in question whenever your problems work on “sites,” “positions,” “data records,” or “locations.”<br>
 - Polygons – which represent regions in some geometric spaces. For example, the borders of a country can be described by a polygon on a map/plane. Polygons and polyhedra are likely the object in question whenever you are working on “shapes,” “regions,” “configurations,” or “boundaries”<br>
-- Strings – which represent sequences of characters or patterns. For example, the names of students in a class can be represented by strings. Strings are likely the object in question whenever you are dealing with “text,” “charac- ters,” “patterns,” or “labels”
+- Strings – which represent sequences of characters or patterns. For example, the names of students in a class can be represented by strings. Strings are likely the object in question whenever you are dealing with “text,” “characters,” “patterns,” or “labels”
 
 - The act of modeling reduces your application to one of a small number of existing problems and structures
 - Such a process is inherently constraining, and certain details might not fit easily into the given target problem 
@@ -106,7 +106,7 @@ in algorithm analysis:
 - Modeling is only the first step in designing an algorithm for a problem
 - Be alert for how the details of your applications differ from a candidate model, but don’t be too quick to say that your problem is unique and special
 - Temporarily ignoring details that don’t fit can free the mind to ask whether they really were fundamental in the first place
-- Modeling your application in terms of well-defined struc- tures and algorithms is the most important single step towards a solution
+- Modeling your application in terms of well-defined structures and algorithms is the most important single step towards a solution
 
 **Recursiveness**
 - Learning to think recursively is learning to look for big things that are made from smaller things of exactly the same type as the big thing

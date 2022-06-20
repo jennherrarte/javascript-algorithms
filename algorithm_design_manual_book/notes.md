@@ -2,7 +2,8 @@
 1. [Intro to Algorithm Design](#Chapter-1-Intro-to-Algorithm-Design)
 2. [Algorithm Analysis](#Chapter-2-Algorithm-Analysis)
 
-( <hr /> )
+ <hr /> 
+
 ### Chapter 1 Intro to Algorithm Design 
 
 ***Goal - Extract the lessons about how to find counter examples, prove correctness and leverage induction***
@@ -135,7 +136,7 @@ in algorithm analysis:
 - Counter examples 
 - Before trying to solve a problem, we need to fully understand that the problem is asking and model the problem to a data structure
 
-( <hr /> )
+ <hr /> 
 
 ### Chapter 2 Algorithm Analysis
 

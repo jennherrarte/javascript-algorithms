@@ -1,10 +1,11 @@
 ### Table of Contents
 1. [Intro to Algorithm Design](#Chapter-1-Intro-to-Algorithm-Design)
+2. [Algorithm Analysis](#Chapter-2-Algorithm-Analysis)
 
-------------------------------------
+( <hr /> )
 ### Chapter 1 Intro to Algorithm Design 
 
-Goal - Extract the lessons about how to find counter examples, prove correctness and leverage induction
+***Goal - Extract the lessons about how to find counter examples, prove correctness and leverage induction***
 
 - An algorithm is a procedure to accomplish a specific task 
 - An algorithm is a procedure that takes any of the possible input instances and transforms it to the desired output
@@ -133,3 +134,126 @@ in algorithm analysis:
 - The primary one of which is called a proof (a chain of reasoning)
 - Counter examples 
 - Before trying to solve a problem, we need to fully understand that the problem is asking and model the problem to a data structure
+
+( <hr /> )
+
+### Chapter 2 Algorithm Analysis
+
+- 2 most important tools that enable us to compare efficiency of algorithms without implementing them are: 
+    - The Ram Model 
+    - The asymptotic analysis of worse-case complexity
+
+**2.1 The Ram Model of Computation**
+- machine independent algorithm design depends on a hypothetical computer called the ***Randon Access Machine** or ***RAM**
+- in this hypotehtical computer: 
+    - each simple operation (+, *, -, =, if, call) takes exactly one time step 
+    - loops and subroutines are not considered simple operations (loops and subroutines are made up of many simple operations)
+    - each memory access takes exactly one time step, but we have as much memory as we need in the RAM model
+    - using this model, algos can be understood and studied in a langurage and machine independent matter 
+
+**2.1.1 Best, Worst, and Average-Case Complexity** 
+- worst-case complexity proves to be most the useful measure
+- each time complexity defines a numerical function, representing time vs. problem size
+
+**Asymptotic Notation**
+- Asymptotic Notation is used to describe the running time of an algorithm - how much time an algorithm takes with a given input, n
+- There are three different notations: big O, big Theta (Θ), and big Omega (Ω)
+- big-Θ is used when the running time is the same for all cases
+- big-O for the worst case running time 
+- big-Ω for the best case running time
+
+**2.2 The Big Oh Notation** 
+- The Big Oh simplifies our analysis by ignoring levels of detail that do not impact out comparison of algos
+- For functions, we can define the: 
+    - worst-case complexities: the max # of steps taken in any instance of size n
+    - base-case complexity: the min # of steps taken in any instance of size n 
+    - average-case complexity: the average # of steps over all innstances of size n
+
+**Formal Notations of Big Oh**
+The formal definitions associated with the Big Oh notation are as follows:
+```
+O 
+- f(n) = O(g(n)) means c · g(n) is an upper bound on f (n). Thus there exists some constant c such that f (n) is always ≤ c · g(n), for large enough n (i.e. , n ≥ n0 for some constant n0). 
+
+Theta
+- f(n) = Ω(g(n)) means c · g(n) is a lower bound on f(n). Thus there exists some constant c such that f(n) is always ≥ c · g(n), for all n ≥ n0.
+
+Omega
+- f(n) = Θ(g(n)) means c1 · g(n) is an upper bound on f(n) and c2 · g(n) is a lower bound on f(n), for all n ≥ n0. Thus there exist constants c1 and c2 such that f (n) ≤ c1 · g(n) and f (n) ≥ c2 · g(n). This means that g(n) provides a nice, tight bound on f(n).
+```
+
+**Big  Oh Examples**
+- 3n² − 100n + 6 = O(n²), because I choose c = 3 and 3n² > 3n² − 100n + 6
+- 3n² − 100n + 6 = O(n³), because I choose c = 1 and n³ > 3n² − 100n + 6 when n > 3
+- 3n²−100n+6 !=O(n),because for any c I choose c×n < 3n² when n>c
+
+- all we need to do is find a constant that works with n to make it true
+- usually we ignore 0 and 1 because we only care about how growth happens with lage n's and different constants
+- we say that a faster-growing function dominates a slower-growing one, just as a faster-growing country eventually comes to dominate the laggard. When f and g belong to different classes (i.e., f(n) ̸= Θ(g(n))), we say g dominates f when f(n) = O(g(n)), sometimes written g ≫ f
+
+**2.4 Working with the Big Oh**
+O(f (n)) + O(g(n)) → O(max(f (n), g(n)))
+Ω(f (n)) + Ω(g(n)) → Ω(max(f (n), g(n)))
+Θ(f (n)) + Θ(g(n)) → Θ(max(f (n), g(n)))
+If f(n) = O(g(n)) and g(n) = O(h(n)), then f(n) = O(h(n)).
+
+example - Suppose f(n) = O(n2) and g(n) = O(n2). This implies that f(n) + g(n) = O(n2) as well.
+
+**YouTube Lecture 2 Notes**
+
+Big O - upper bound<br>
+- when we say that a function f(n) is Big O g(n), what we mean is that g(n) is an upper bound of f(n) - meaning there is something (c) you multiply f(n) by  so  that: 
+    - f(n) O(g(n))
+    - f(n) < g(n) --> our function f(n) is upper bounded by c * g(n)
+
+Theta - lower bound<br>
+- f(n) is always lower bounded by g(n) / c * g(n)
+
+Omega - tight bound<br>
+- c1 * g(n) is upper bound
+- c2 * g(n) is lower bound
+
+- constant is what makes a function lower vs upper bound
+
+- we are interested in behavior of functions as n gets very big, going out to infinity
+- when we look at definitions, implicitly it is OK if there is a constant and zero, a small value such as the relationship doesn't hold before No
+- i.e if something is Big O O(g(n)) that means the upper bound relation holds for all  values greater than No 
+
+**2.3 Growth Rate and Dominance Relations**
+- with Big O, we discard multiplicative constants
+
+**2.3.1 Dominance Relations**
+**Complexity of algorithms**
+- Constant f(n) = 1
+- Logarithmic f(n) = log n. binary search
+- Linear f(n) = n
+- Superlinear f(n) = n lg n. quick sort, merge sort
+- Quadratic f(n) = n²
+- Cubic f(n) = n³. Such functions enumerate through all triples of items in an n-element universe
+- Exponential f(n) = c^n. Functions like 2^n arise when enumerating all subsets of n items.
+- Factorial f(n) = n!. Functions like n! arise when generating all permutations or orderings of n items
+
+**2.4.2 Multiplying Functions**
+- Multiplying a function by a constant can not affect its asymptotic behavior, because we can multiply the bounding constants in the Big Oh analysis of c · f(n) by 1/c to give appropriate constants for the Big Oh analysis of f(n).
+Examples
+
+- O(c · f(n)) → O(f(n))
+
+- O(f(n)) * O(g(n)) → O(f(n) * g(n))
+- Reasoning: If I'm doing at most f(n) things and  at most they each  take g(n) time, then it will be f(n) * g(n)
+
+- Problem: Show that Big Oh relationships are transitive. That is, if f(n) = O(g(n)) and g(n) = O(h(n)), then f(n) = O(h(n))
+
+- f(n) ≤ c1g(n) for n > n1  // there is a constant (c1) that makes c1g(n) greater for n > n1
+- n1      n = n > n1 
+
+- c1g(n) ≤ c2h(n) for n > n2  // there is a constant (c2) that makes c1h(n) greater for n > n2
+- n2        n  = n > n2 
+
+- f(n) ≤ c2c3h(n) for n > n3 (max(n1, n2))  // there is a constant (c2 * c3) that makes c2c3h(n) greater for n > n3
+n3        n = max(n1, n2) 
+
+**2.5.1 Selection Sort**
+- selection sort algorithm - repeatedly identifies the smallest remaining unsorted element and puts it at the end of the sorted portion of the array
+
+

@@ -283,4 +283,4 @@ S(n) = n(n -1) / 2
 - in terms of upper and lower bounds, we have n terms at most, each of which is n - 1 
 - S(n) <= n(n-1) = O(N2)
 
-**Selection Sort is Quadratic**
+- **Selection Sort is Quadratic**

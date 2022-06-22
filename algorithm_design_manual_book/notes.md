@@ -272,7 +272,7 @@ function selectionSort(arr) {
 }
 ```
 **this represents the exact times the if statement is executed** <br>
-![](Screen Shot 2022-06-21 at 11.36.34 PM.png)
+![screenshot of summation notation](https://ibb.co/Ch9CF4R)
 
 - this summation is the equivalent of 
 S(n) = (n - 1) + (n - 2) + (n - 3) + . . .  2 + 1

@@ -271,7 +271,7 @@ function selectionSort(arr) {
     return arr
 }
 ```
-**this represents the exact times the if statement is executed**
+**this represents the exact times the if statement is executed** <br>
 ![](Screen Shot 2022-06-21 at 11.36.34 PM.png)
 
 - this summation is the equivalent of 

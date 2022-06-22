@@ -1,4 +1,4 @@
-### Chapter 4 Expressions and  Operators
+### Chapter 4 - Expressions and  Operators
 
 **4.12.1** eval()
 - expects one argument 
@@ -17,7 +17,7 @@ eval('3 + 2') // => 5
 ```js
 x > 0 ? x : -x
 ```
-### Chapter 5 Statements
+### Chapter 5 - Statements
 - expressions are evaluated to produce a value, but statements are executed to make something happen
 - Conditionals - statements like if and switch that make the JS interpreter execute or skip other  statements depending on value of  an expression
 - Loops - statements like while and for that executee other statements repetitively

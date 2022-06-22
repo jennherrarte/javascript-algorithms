@@ -257,4 +257,30 @@ n3        n = max(n1, n2)
 **2.5.1 Selection Sort**
 - selection sort algorithm - repeatedly identifies the smallest remaining unsorted element and puts it at the end of the sorted portion of the array
 
+```js
+function selectionSort(arr) {
+    for(i = 0; i < arr.length; i++) { // outer loop goes around n times
+        let min =  i
+        for(j = i + 1; j < arr.length; j++) { // inner loop goes around n - i - 1 times
+            if(arr[j] < arr[lowest]) { 
+                lowest = j
+            }
+            arr[i], arr[lowest] = arr[lowest], arr[i]
+        }
+    }
+    return arr
+}
+```
+**this represents the exact times the if statement is executed**
+![](Screen Shot 2022-06-21 at 11.36.34 PM.png)
 
+- this summation is the equivalent of 
+S(n) = (n - 1) + (n - 2) + (n - 3) + . . .  2 + 1
+
+- another way to think about it is, we are adding up n - 1 terms whose average is 
+S(n) = n(n -1) / 2
+
+- in terms of upper and lower bounds, we have n terms at most, each of which is n - 1 
+- S(n) <= n(n-1) = O(N2)
+
+**Selection Sort is Quadratic**

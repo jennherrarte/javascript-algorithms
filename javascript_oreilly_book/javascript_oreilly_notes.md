@@ -1,3 +1,10 @@
+// To-Do
+// Cover scope
+// How array sorting works  under the hood
+// Various methods built into JS
+// fetch + structuring api requests
+// chaining
+// async await 
 ### Chapter 4 - Expressions and  Operators
 
 **4.12.1** eval()
@@ -73,4 +80,46 @@ switch (new Date().getDay()) {
 }
 
 
+```
+
+**5.4 Loops**
+- JS has 5 looping statements
+  - while
+  - do/while
+  - for
+  - for/of (and its for/await await)
+  - for/in
+
+
+**5.4.1 While**
+```
+while(expression)
+statement
+```
+
+- interpreter executes the statement repeatedly ***while*** the ***expression** is truthy 
+- an infinite loop can be created using ***while(true)***
+
+**5.4.2 Do/While**
+- the do/while loop is like a while loop, except that the loop expression is tested at the bottom of the loop rather than at the top 
+- this means the body of the loop is always executed at least once
+- do loop requires both the **do** keyword (to mark the beginning of the loop condition)
+- do loop requires the **while** keyword (to mark the end and introduce the loop condition)
+- do loop must  always be terminated with a semicolon
+```
+do
+statement
+while(expression)
+```
+```js
+function printArray(a) {
+  let len = a.length, i = 0;
+  if(len === 0) {
+    console.log('empty array');
+  } else {
+    do {
+      console.log(a[i]);
+    } while(++i < len)
+  }
+}
 ```

@@ -77,7 +77,7 @@ https://medium.com/interviewnoodle/grokking-leetcode-a-smarter-way-to-prepare-fo
 
 - [x] Merge Intervals (medium): LC 56
       Done: 
-- [ ] Insert Interval (medium): LC 57
+- [x] Insert Interval (medium): LC 57
       Done: 
 - [ ] Intervals Intersection (medium): LC 986
       Done: 

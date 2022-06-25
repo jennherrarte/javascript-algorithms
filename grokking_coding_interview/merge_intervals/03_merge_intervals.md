@@ -4,6 +4,7 @@
 1. [Merge Intervals (medium)](#Merge-Intervals)
 2. [Insert Interval (medium)](#Insert-Interval)
 3. [Intervals Intersection(medium)](#Intervals-Intersection)
+4. [Conflicting Appointments (medium)](#Conflicting-Appointments)
 
 ### Merge Intervals
 
@@ -161,3 +162,35 @@ function interval_intersection(firstList, secondList) {
 
 > **Time: O(N+M)**<br>
 > **Space: O(1)**
+
+
+### Conflicting Appointments
+```
+Given an array of intervals representing ‘N’ appointments, find out if a person can attend all the appointments.
+```
+```
+**Example 1:**
+Input: intervals = [[0,30],[5,10],[15,20]]
+Output: false
+
+**Example 2:**
+Input: intervals = [[7,10],[2,4]]
+Output: true
+```
+```js
+// this is the leetcode answer as it works better with jest test cases
+function canAttendMeetings (intervals) {
+    
+    intervals.sort((a, b) => a[0] - b[0])
+    
+    for(i = 1; i < intervals.length; i++) {
+        if(intervals[i][0] < intervals[i-1][1]) {
+            return false
+        }
+    }
+    
+    return true
+};
+```
+> **Time: O(N * logN)**<br>
+> **Space: O(N)**

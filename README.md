@@ -81,7 +81,7 @@ https://medium.com/interviewnoodle/grokking-leetcode-a-smarter-way-to-prepare-fo
       Done: 
 - [x] Intervals Intersection (medium): LC 986
       Done: 
-- [ ] Conflicting Appointments (medium): LC 252
+- [x] Conflicting Appointments (medium): LC 252
       Done: 
 - [ ] Problem Challenge 1: LC 253
       Done:

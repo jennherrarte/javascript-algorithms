@@ -7,3 +7,4 @@ test('works', () => {
 test('works', () => {
 	expect(interval_intersection([[1,3],[5,9]], [])).toEqual([]);
 });
+

@@ -3,6 +3,7 @@
 ## Table of contents
 1. [Merge Intervals (medium)](#Merge-Intervals)
 2. [Insert Interval (medium)](#Insert-Interval)
+3. [Intervals Intersection(medium)](#Intervals-Intersection)
 
 ### Merge Intervals
 
@@ -105,5 +106,58 @@ function insert_interval (intervals, new_interval) {
 }
 
 ```
-> **Time: O(N**<br>
+> **Time: O(N)**<br>
 > **Space: O(N)**
+
+### Intervals Intersection
+```
+Given two lists of intervals, find the intersection of these two lists. Each list consists of disjoint intervals sorted on their start time.
+```
+```
+**Example 1:**
+Input: arr1=[[1, 3], [5, 6], [7, 9]], arr2=[[2, 3], [5, 7]]
+Output: [2, 3], [5, 6], [7, 7]
+
+**Example 2:**
+Input: arr1=[[1, 3], [5, 7], [9, 12]], arr2=[[5, 10]]
+Output: [5, 7], [9, 10]
+```
+
+```js
+// this is the leetcode answer as it works better with jest test cases
+function interval_intersection(firstList, secondList) {
+  let mergedList = [];
+
+  let i = 0,
+    j = 0;
+
+  while (i < firstList.length && j < secondList.length) {
+    let first_overlaps_second =
+      firstList[i][0] >= secondList[j][0] &&
+      firstList[i][0] <= secondList[j][1];
+
+    let second_overlaps_first =
+      secondList[j][0] >= firstList[i][0] &&
+      secondList[j][0] <= firstList[i][1];
+
+    if (first_overlaps_second || second_overlaps_first) {
+      mergedList.push([
+        Math.max(firstList[i][0], secondList[j][0]),
+        Math.min(firstList[i][1], secondList[j][1]),
+      ]);
+    }
+
+    if (firstList[i][1] < secondList[j][1]) {
+      i++;
+    } else {
+      j++;
+    }
+  }
+
+  return mergedList;
+}
+
+```
+
+> **Time: O(N+M)**<br>
+> **Space: O(1)**

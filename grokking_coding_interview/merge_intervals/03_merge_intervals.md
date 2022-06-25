@@ -5,6 +5,7 @@
 2. [Insert Interval (medium)](#Insert-Interval)
 3. [Intervals Intersection(medium)](#Intervals-Intersection)
 4. [Conflicting Appointments (medium)](#Conflicting-Appointments)
+4.5. [List Conflicting Appointments](#List-Conflicting-Appointments)
 
 ### Merge Intervals
 
@@ -191,6 +192,39 @@ function canAttendMeetings (intervals) {
     
     return true
 };
+```
+> **Time: O(N * logN)**<br>
+> **Space: O(N)**
+
+### List Conflicting Appointments
+```
+Given a list of appointments, find all the conflicting appointments.
+```
+```
+**Example 1:**
+Appointments: [[4,5], [2,3], [3,6], [5,7], [7,8]]
+Output: 
+[4,5] and [3,6] conflict. 
+[3,6] and [5,7] conflict.
+```
+```js
+function list_conflicts(intervals) {
+  intervals.sort((a, b) => a[0] - b[0]);
+
+  let conflicting_intervals = [];
+
+  for (i = 0; i < intervals.length; i++) {
+    for (j = i + 1; j < intervals.length; j++) {
+      if (
+        intervals[i][1] > intervals[j][0] ||
+        intervals[i][1] > intervals[j][1]
+      ) {
+        conflicting_intervals.push(intervals[i], intervals[j]);
+      }
+    }
+  }
+  return conflicting_intervals;
+}
 ```
 > **Time: O(N * logN)**<br>
 > **Space: O(N)**

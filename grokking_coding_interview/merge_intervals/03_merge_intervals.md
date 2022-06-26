@@ -4,8 +4,9 @@
 1. [Merge Intervals (medium)](#Merge-Intervals)
 2. [Insert Interval (medium)](#Insert-Interval)
 3. [Intervals Intersection(medium)](#Intervals-Intersection)
-4. [Conflicting Appointments (medium)](#Conflicting-Appointments)<br>
-4.5. [List Conflicting Appointments](#List-Conflicting-Appointments)
+4. [Conflicting Appointments (medium)](#Conflicting-Appointments) 
+/ 4.5. [List Conflicting Appointments](#List-Conflicting-Appointments)
+5. 
 
 ### Merge Intervals
 

@@ -362,7 +362,7 @@ Example
 
 **2.6.7 Logarithms and Summations**
 - using harmonic numbers can reduce complexity, i.e quicksort
-![screenshot of summation notation](/algorithm_design_manual_book/notes-screenshots/harmonic-numbers.png)
+![screenshot of harmonic numbers](/algorithm_design_manual_book/notes-screenshots/harmonic-numbers.png)
 
 **2.7 Properties of Logarithms**
 - b * b * b (b to the third power) is equivalent to x = lob b y 
@@ -400,7 +400,7 @@ Example
 - Among polynomials, higher powers dominate lower,
 - here’s an example that pretty much has to be done using the dominance approach:
 
-\displaystyle \underset{x\to \infty }{\mathop{\lim }}\,\frac{\ln \left( {{x}^{5}} \right)}{{{x}^{0.02}}}=0
+![screenshot of dominance example](/algorithm_design_manual_book/notes-screenshots/dominance.png)
 
 - The polynomial function in the denominator, even with the very small exponent, will dominate the logarithm function
 - The denominator will eventually get larger than the numerator and drive the quotient towards zero

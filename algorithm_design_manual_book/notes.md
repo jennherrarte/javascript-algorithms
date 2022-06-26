@@ -281,6 +281,127 @@ S(n) = (n - 1) + (n - 2) + (n - 3) + . . .  2 + 1
 S(n) = n(n -1) / 2
 
 - in terms of upper and lower bounds, we have n terms at most, each of which is n - 1 
-- S(n) <= n(n-1) = O(N2)
+- S(n) <= n(n-1) = O(N2) 
 
 - **Selection Sort is Quadratic**
+
+**2.5.2 Selection Sort**
+
+```js
+for(i = 0; i < n; i++) {
+    j = 1;
+    while((j > 0) && (s[j] < s[j-1])) {
+        swap(&s[j], &s[j-1]);
+        j = j - 1;
+    }
+}
+```
+
+```
+Example Iteration
+
+[12,11,13,5,6]
+
+[11,12,13,5,6]
+
+[11,12,5,13,6]
+
+[11,5,12,13,6]
+
+[5,11,12,13,6]
+
+[5,11,12,6,13]
+
+[5,11,6,12,13]
+
+[5,6,11,12,13]
+
+```
+- basic rule of thumb in Big O analysis is that worst-case running time follows from multiplying the largest number of times each nested loop can iterate
+
+- How many times does the while loop occur? 
+    - two different stopping conditions for while loop above 
+         - one  to prevent us from running out of bounds of the array 
+         - the other is to mark when the element finds the proper place in the sorted order
+    - worst case analysis seeks  an upper bound on the running time, so we can just assume it always gets around n times 
+- we can round up to Quadratic time i.e O(N2)
+
+**2.5.3 String Pattern Matching**
+- worst case is O(nm)
+
+**2.5.3 Matrix Multiplication**
+- 3 level for loop, a cubic algorithm, not optimal
+
+
+**2.6. Logarithms and Their Multiplication**
+
+- A logarithm is an inverse exponential function 
+- Logarithms arise in any process where things are repeatedly halved
+
+```
+Example
+
+2 * 2 * 2 = 8
+
+3 is the logarithm of 8 to base 2, or 3 = log2 8.
+
+```
+**2.6.1 Binary Search**
+- Binary Search is a good example of an O(logn) algo
+- The number of steps the algo takes equals the number of times we can halve n until only one item is left
+- these algos are fast  enough to be used on problem instances of essentially unlimited size
+
+**2.6.2 Logarithms and Trees**
+- we can use logarithms to evaluate how many leaf nodes + leaves a binary tree can half because leaf nodes double in size based on the height of the tree
+
+**2.6.3 Logarithms and Bits**
+- we can use logarithms to know how many w bits we need to represent any one of n different possibilites 
+
+**2.6.4 Logarithms and Multiplication**
+- the log of a product is the sum of the logs 
+
+**2.6.7 Logarithms and Summations**
+- using harmonic numbers can reduce complexity, i.e quicksort
+![screenshot of summation notation](/algorithm_design_manual_book/notes-screenshots/harmonic-numbers.png)
+
+**2.7 Properties of Logarithms**
+- b * b * b (b to the third power) is equivalent to x = lob b y 
+- b is known as the base of the logarithm 
+- 3 bases to know
+    - Base b = 2 - The Binary Logarithm 
+        - usually denoted  lg x, is a base 2 algo
+        - this base arises whenever repeated halving (ie binary search) or doubling (ie nodes in trees) occurs 
+        - most algorithmic applications of logarithms imply binary logarithms
+
+    - Base b = e - The Natural Log 
+        - usually denoted lg x, is a base e = 2.71828...logarithm 
+        - the inverse of ln x is exponential function exp(x) = e to the x power on a calculator 
+        - composing these functioins gives us exp(ln x) = x
+
+    - Base b = 10 - common logarithm (but actually not as common anymore)
+        - usually denoted  as log x 
+
+- log a(xy) = loga(x) + loga(y)
+- we can also convert a logarithm from one base to another using:
+    - logaB = logcB / logcA
+- the base of the logarithm has no real impact on growth rate 
+- logarithms cut any function down to size - the growth rate of the logarithm of any polynomial function is O(lg n) b/c logaN to the b power = b * logaN
+
+- take away - power of binary search comes from its logarithmic complexity, not the base of the log 
+
+**2.9.2 Limits and Dominance Relations**
+    
+- when considering functions made up of the sums, differences, products or quotients of different sorts of functions (polynomials, exponentials and logarithms), or different powers of the same sort of function we  say that one function dominates the other
+- this means that as x approaches infinity or negative infinity, the graph will eventually look like the dominating function.
+
+- Exponentials dominate polynomials,
+- Polynomials dominate logarithms,
+- Among exponentials, larger bases dominate smaller,
+- Among polynomials, higher powers dominate lower,
+- here’s an example that pretty much has to be done using the dominance approach:
+
+\displaystyle \underset{x\to \infty }{\mathop{\lim }}\,\frac{\ln \left( {{x}^{5}} \right)}{{{x}^{0.02}}}=0
+
+- The polynomial function in the denominator, even with the very small exponent, will dominate the logarithm function
+- The denominator will eventually get larger than the numerator and drive the quotient towards zero
+- We will return to this function when we know about finding maximums and points of inflection and find where it starts decreasing

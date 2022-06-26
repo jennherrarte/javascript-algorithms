@@ -232,7 +232,7 @@ function printArray(a) {
 
    The prototype on object instance is available through **Object.getPrototypeOf(object)** or \***\*proto\*\*** property whereas prototype on constructors function is available through **Object.prototype**.
 
-   ![Screenshot](images/prototype_chain.png)
+   !![screenshot of prototypechain](/javascript-notes-screenshots/javascript-notes-screenshots/prototype.png)
 
    **[⬆ Back to Top](#table-of-contents)**
 

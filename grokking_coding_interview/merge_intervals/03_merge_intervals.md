@@ -6,7 +6,7 @@
 3. [Intervals Intersection(medium)](#Intervals-Intersection)
 4. [Conflicting Appointments (medium)](#Conflicting-Appointments) 
 / 4.5. [List Conflicting Appointments](#List-Conflicting-Appointments)
-5. 
+5. [Minimum Meeting Rooms (hard)](#Minimum-Meeting-Rooms)
 
 ### Merge Intervals
 

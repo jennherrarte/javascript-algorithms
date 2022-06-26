@@ -405,3 +405,6 @@ Example
 - The polynomial function in the denominator, even with the very small exponent, will dominate the logarithm function
 - The denominator will eventually get larger than the numerator and drive the quotient towards zero
 - We will return to this function when we know about finding maximums and points of inflection and find where it starts decreasing
+
+**War Story**
+- you're more likely to increase efficiency by tweaking and improving your algorithm, rather than using a super computer, epsecially when you have a huge amount of values

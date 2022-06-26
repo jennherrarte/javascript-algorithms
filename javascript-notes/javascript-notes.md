@@ -1,7 +1,6 @@
-// To-Do
-// Cover scope
-// How array sorting works  under the hood
-// Various methods built into JS
+- to-do - cover scope
+// how array sorting works under the hood
+// various methods built into JS
 // fetch + structuring api requests
 // chaining
 // async await 
@@ -15,6 +14,8 @@
 ```
 eval('3 + 2') // => 5
 ```
+<hr>
+
 ### **conditional operator (?:)**
 - conditional operator is the only ternary operator 
 - first operand is evaluated and interpretated as a boolean
@@ -23,11 +24,15 @@ eval('3 + 2') // => 5
 ```js
 x > 0 ? x : -x
 ```
+<hr>
+
 ### **JS Statements**
 - expressions are evaluated to produce a value, but statements are executed to make something happen
 - Conditionals - statements like if and switch that make the JS interpreter execute or skip other  statements depending on value of  an expression
 - Loops - statements like while and for that executee other statements repetitively
 - Jumps -  statementsl ikee break, return, and throw that cause the interpreter  to jump to another part of the program
+
+<hr>
 
 ### **Switch Expressions**
 - The switch expression is evaluated once
@@ -80,6 +85,7 @@ switch (new Date().getDay()) {
 
 
 ```
+<hr>
 
 ### **Loops**
 - JS has 5 looping statements
@@ -89,6 +95,7 @@ switch (new Date().getDay()) {
   - for/of (and its for/await await)
   - for/in
 
+<hr>
 
 ### **While Loops**
 ```
@@ -98,6 +105,8 @@ statement
 
 - interpreter executes the statement repeatedly ***while*** the ***expression** is truthy 
 - an infinite loop can be created using ***while(true)***
+
+<hr>
 
 ### **Do/While Loops**
 - the do/while loop is like a while loop, except that the loop expression is tested at the bottom of the loop rather than at the top 
@@ -122,7 +131,7 @@ function printArray(a) {
   }
 }
 ```
-
+<hr>
 
 ### What are the possible ways to create objects in JavaScript
 
@@ -225,6 +234,7 @@ function printArray(a) {
         this.name = "Sudheer";
       })();
       ```
+<hr>
 
 ### What is a prototype chain
 
@@ -234,7 +244,7 @@ function printArray(a) {
 
    ![screenshot of prototypechain](/javascript-notes/javascript-notes-screenshots/prototype.png)
 
-   **[⬆ Back to Top](#table-of-contents)**
+<hr>
 
 ### What is the difference between Call, Apply and Bind
 

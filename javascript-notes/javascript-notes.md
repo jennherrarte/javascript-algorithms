@@ -6,7 +6,7 @@
 // chaining
 // async await 
 
-**eval()**
+### **eval()**
 - expects one argument 
 - if you pass value other than a  string, it returns that value
 - if you pass a string, it attemps to parse the  string as JavaScript code, throwing a syntax error if it fails
@@ -15,7 +15,7 @@
 ```
 eval('3 + 2') // => 5
 ```
-**conditional operator (?:)**
+### **conditional operator (?:)**
 - conditional operator is the only ternary operator 
 - first operand is evaluated and interpretated as a boolean
 - if value of first operand is truthy, then second operand is evaulated and its value returned
@@ -23,13 +23,13 @@ eval('3 + 2') // => 5
 ```js
 x > 0 ? x : -x
 ```
-**JS Statements**
+### **JS Statements**
 - expressions are evaluated to produce a value, but statements are executed to make something happen
 - Conditionals - statements like if and switch that make the JS interpreter execute or skip other  statements depending on value of  an expression
 - Loops - statements like while and for that executee other statements repetitively
 - Jumps -  statementsl ikee break, return, and throw that cause the interpreter  to jump to another part of the program
 
-**Switch Expressions**
+### **Switch Expressions**
 - The switch expression is evaluated once
 - The value of the expression is compared with the values of each case
 - If there is a match, the associated block of code is executed
@@ -81,7 +81,7 @@ switch (new Date().getDay()) {
 
 ```
 
-**Loops**
+### **Loops**
 - JS has 5 looping statements
   - while
   - do/while
@@ -90,7 +90,7 @@ switch (new Date().getDay()) {
   - for/in
 
 
-**While Loops**
+### **While Loops**
 ```
 while(expression)
 statement
@@ -99,7 +99,7 @@ statement
 - interpreter executes the statement repeatedly ***while*** the ***expression** is truthy 
 - an infinite loop can be created using ***while(true)***
 
-**Do/While Loops**
+### **Do/While Loops**
 - the do/while loop is like a while loop, except that the loop expression is tested at the bottom of the loop rather than at the top 
 - this means the body of the loop is always executed at least once
 - do loop requires both the **do** keyword (to mark the beginning of the loop condition)
@@ -124,7 +124,7 @@ function printArray(a) {
 ```
 
 
-1. ### What are the possible ways to create objects in JavaScript
+### What are the possible ways to create objects in JavaScript
 
    There are many ways to create objects in javascript as below
 
@@ -226,7 +226,7 @@ function printArray(a) {
       })();
       ```
 
-2. ### What is a prototype chain
+### What is a prototype chain
 
    **Prototype chaining** is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language.
 
@@ -236,7 +236,7 @@ function printArray(a) {
 
    **[⬆ Back to Top](#table-of-contents)**
 
-3. ### What is the difference between Call, Apply and Bind
+### What is the difference between Call, Apply and Bind
 
    The difference between Call, Apply and Bind can be explained with below examples,
 

@@ -1,6 +1,7 @@
 ### Table of Contents
 1. [Intro to Algorithm Design](#Chapter-1-Intro-to-Algorithm-Design)
 2. [Algorithm Analysis](#Chapter-2-Algorithm-Analysis)
+3. [Data Structures](#Chapter-3-Data-Structures)
 
  <hr /> 
 
@@ -408,3 +409,83 @@ Example
 
 **War Story**
 - you're more likely to increase efficiency by tweaking and improving your algorithm, rather than using a super computer, epsecially when you have a huge amount of values
+
+### Chapter 3 Data Structures
+
+**3.1 Contigous vs. Linked Data Structures**
+- data structures can be classified as ***contigous*** or ***linked***, depending on whether they are based on arrays or pointers: 
+    -  ***Contiguously-Allocated Structures*** - composed of single slabs of memory, and includes arrays, matrices, heaps, hash tables
+    - ***Linked Data Structures*** - composed  of distinct chunks of memory bound together by pointers, and includes lists, trees, graph adjacency lists
+
+**3.1.1 Arrays**
+- type: Contiguously-Allocated Structure
+- arrays are structures of fixed-size data records such that each element can be efficiently located by its index 
+- advantages
+    - **Constant-time access given the index** – because the index of each element maps directly to a particular memory address, we can access data items instantly (if you know the index)
+    - **Space efficiency** – arrays consist purely of data, so no space is wasted with links or other formatting information
+    -  also we don't need end-of-record information because arrays are built from fixed-size records 
+    - **Memory locality** – arrays are great to iterate over because of excellent memory locality
+    - physical continuity between successive data accesses helps us use the high-speed cache memory on modern computer architectures
+
+- downside 
+    - we can't adjust array size in the middle of a program's execution 
+
+- workaround 
+    - we can enlarge arrays using ***dynamic arrays** 
+    - ***dynamic arrays** advantages
+        - randon access to elements O(1)
+        - good locality of reference and data
+        - easy to insert/delete at the end
+    - ***dynamic arrays** disadvantages
+        - wastes memory space
+        - shifting elements is time consuming O(n)
+        - expanding / shrinking array is time consuming O(n)
+        - primary thing lost using dynamic arrays is the guarantee that each array access takes constant time in the worst case
+        - all the queries will be fast, except for those relatively few queries triggering array doubling
+        - what we get instead is a promise that the nth array access will be completed quickly enough that the total effort expended so far will still be O(n)
+
+    **3.1.2 Pointers and Linked Structures**
+    - type: Linked Data Structures
+    - pointers are the connections that hold the pieces of linked structures together
+    - pointers represent the address of a location in memory
+    - A variable storing a pointer to a given data item can provide more freedom than storing a copy of the item itself (i.e a cell phone pointing to its owner as they travel)
+    - all linked data structures share certain properties, as revealed by the following linked list type declaration:
+```js
+    typedef struct list { 
+                  item_type item; /* data item */
+                  struct list *next; /* point to successor */
+    } list;
+```
+
+   - each node in our data structure (here list) contains one or more data fields
+(here item) that retain the data that we need to store
+  - each node contains a pointer field to at least one other node (here next)
+  - this means that much of the space used in linked data structures has to be devoted to pointers, not data
+  - finally, we need a pointer to the head of the structure, so we know where to access it
+
+  - the list is the simplest linked structure
+  - The three basic operations supported by lists are **searching**, **insertion**, and **deletion**
+  - in doubly-linked lists, each node points both to its predecessor and its successor element - this simplifies certain operations at a cost of an extra pointer field per node
+
+**Searching a List**
+    - searching for item x in a linked list can be done iteratively or recursively
+    - if done recursively, it is either the first element or located in the smaller rest of the list 
+    - if not in the list, we reduce the problem to searching in an empty list
+
+```js
+list *search_list(list *l, item_type x) {
+        if (l == NULL) return(NULL);
+if (l->item == x) return(l);
+else }
+return( search_list(l->next, x) );
+```
+
+**Intersion into a List**
+-s ince we have no need to maintain the list in any particular order, we might as well insert each new item in the simplest place
+- insertion at the beginning of the list avoids any need to traverse the list, but does require us to update the pointer (denoted l) to the head of the data structure
+
+**Deletion from a List**
+- to delete, we need to find a pointer to the predecessor of the item to be deleted, which can be done recursively
+- the predecessor is needed because it points to the doomed node, so its next pointer must be changed
+- the actual deletion operation is simple, once ruling out the case that the to-be-deleted element does not exist
+- sepecial care must be taken to reset the pointer to the head of the list (l) when the first element is deleted 

@@ -29,8 +29,8 @@ x > 0 ? x : -x
 ### **JS Statements**
 - expressions are evaluated to produce a value, but statements are executed to make something happen
 - Conditionals - statements like if and switch that make the JS interpreter execute or skip other  statements depending on value of  an expression
-- Loops - statements like while and for that executee other statements repetitively
-- Jumps -  statementsl ikee break, return, and throw that cause the interpreter  to jump to another part of the program
+- Loops - statements like while and for that execute other statements repetitively
+- Jumps -  statements like break, return, and throw that cause the interpreter  to jump to another part of the program
 
 <hr>
 
@@ -306,66 +306,6 @@ function printArray(a) {
 
 <hr>
 
-### What is the difference between Call, Apply and Bind
-
-   The difference between Call, Apply and Bind can be explained with below examples,
-
-   **Call:** The call() method invokes a function with a given `this` value and arguments provided one by one
-
-   ```javascript
-   var employee1 = { firstName: "John", lastName: "Rodson" };
-   var employee2 = { firstName: "Jimmy", lastName: "Baily" };
-
-   function invite(greeting1, greeting2) {
-     console.log(
-       greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
-     );
-   }
-
-   invite.call(employee1, "Hello", "How are you?"); // Hello John Rodson, How are you?
-   invite.call(employee2, "Hello", "How are you?"); // Hello Jimmy Baily, How are you?
-   ```
-
-   **Apply:** Invokes the function with a given `this` value and allows you to pass in arguments as an array
-
-   ```javascript
-   var employee1 = { firstName: "John", lastName: "Rodson" };
-   var employee2 = { firstName: "Jimmy", lastName: "Baily" };
-
-   function invite(greeting1, greeting2) {
-     console.log(
-       greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
-     );
-   }
-
-   invite.apply(employee1, ["Hello", "How are you?"]); // Hello John Rodson, How are you?
-   invite.apply(employee2, ["Hello", "How are you?"]); // Hello Jimmy Baily, How are you?
-   ```
-
-   **bind:** returns a new function, allowing you to pass any number of arguments
-
-   ```javascript
-   var employee1 = { firstName: "John", lastName: "Rodson" };
-   var employee2 = { firstName: "Jimmy", lastName: "Baily" };
-
-   function invite(greeting1, greeting2) {
-     console.log(
-       greeting1 + " " + this.firstName + " " + this.lastName + ", " + greeting2
-     );
-   }
-
-   var inviteEmployee1 = invite.bind(employee1);
-   var inviteEmployee2 = invite.bind(employee2);
-   inviteEmployee1("Hello", "How are you?"); // Hello John Rodson, How are you?
-   inviteEmployee2("Hello", "How are you?"); // Hello Jimmy Baily, How are you?
-   ```
-
-   Call and apply are pretty interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating Call is for **comma** (separated list) and Apply is for **Array**.
-
-   Whereas Bind creates a new function that will have `this` set to the first parameter passed to bind().
-
-<hr>
-
 ### What is JSON and its common operations
 
    **JSON** is a text-based data format following JavaScript object syntax, which was popularized by `Douglas Crockford`. It is useful when you want to transmit data across a network and it is basically just a text file with an extension of .json, and a MIME type of application/json
@@ -380,3 +320,20 @@ function printArray(a) {
 
    ```javascript
    JSON.stringify(object);
+  ```
+<hr>
+
+ ### What is the purpose of the array slice method
+
+   The **slice()** method returns the selected elements in an array as a new array object. It selects the elements starting at the given start argument, and ends at the given optional end argument without including the last element. If you omit the second argument then it selects till the end.
+
+   Some of the examples of this method are,
+
+   ```javascript
+   let arrayIntegers = [1, 2, 3, 4, 5];
+   let arrayIntegers1 = arrayIntegers.slice(0, 2); // returns [1,2]
+   let arrayIntegers2 = arrayIntegers.slice(2, 3); // returns [3]
+   let arrayIntegers3 = arrayIntegers.slice(4); //returns [5]
+   ```
+
+   **Note:** Slice method won't mutate the original array but it returns the subset as a new array.

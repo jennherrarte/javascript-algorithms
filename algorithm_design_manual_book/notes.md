@@ -489,3 +489,178 @@ return( search_list(l->next, x) );
 - the predecessor is needed because it points to the doomed node, so its next pointer must be changed
 - the actual deletion operation is simple, once ruling out the case that the to-be-deleted element does not exist
 - sepecial care must be taken to reset the pointer to the head of the list (l) when the first element is deleted 
+
+**3.1.3 Comparison**
+- advantages of linked lists over static arrays:
+    - overflow on linked structures can never  occur unless memory is actually full
+    - insertions and deletions are simpler than for contiguous (array) lists
+    - with large records, moving pointes is easier and faster than moving the items themselves 
+
+- advantages of arrays include 
+    - linked structures require extra space for storing pointer fields
+    - linked lists do not allow efficient random access to items 
+    - arrays allow  better memory locality  and cache performance than random pointer jumping 
+
+- takeaway
+    - dynamic memory allocation providesus with flexibility on how and where we use our limited  storage resources 
+
+- these fundamental structures can be through of as recursive objects: 
+    - Lists
+        -  chopping the first element off a linked list leaves a smaller linked list
+        - this same argument works for strings, since removing characters from string leaves a string
+        - lists are recursive objects
+    - Arrays
+        - splitting the first k elements off of an n element array gives two smaller arrays, of size k and n−k, respectively
+        - arrays are recursive object
+
+-  this insight leads to simpler list processing, and efficient divide-and-conquer algorithms such as quicksort and binary search
+
+**3.2 Stacks and Queues**
+- the term container denotes a data structure that permits storage and retrieval of data items independent of content
+- by contrast, dictionaries are abstract data types that retrieve based on key values or content
+
+- **Containers**
+    - distingued by the  particular retrieval order they support
+    - for the two most important types of containers, the retrieval ordeer depends on insertion order 
+        - **Stacks** (LIFO)
+            - support retrieval by last-in, first-out (LIFO) order 
+            - stacks are simple to implement and very efficient
+            -for this reason, stacks are probably the right container to use when retrieval order doesn’t matter at all, such as when processing batch jobs
+            - the put and get operations for stacks are usually called push and pop:
+                ```
+                – Push(x,s): Insert item x at the top of stack s.
+                – Pop(s): Return (and remove) the top item of stack s.
+                ```
+        - **Queues** (FIFO)
+            - support retrieval in first in, first out (FIFO) order
+            - ideal for when you want the container holding jobs to be processed in FIFO order to minimize the maximum time spent waiting
+            - note that the average waiting time will be the same regardless of whether FIFO or LIFO is used
+            - trickier to implement
+            - most appropriate for applications (like certain simulations) where the order is important
+            - the put and get operations for queues are usually called enqueue and dequeue
+            ```
+                – Enqueue(x,q): Insert item x at the back of queue q.
+                – Dequeue(q): Return (and remove) the front item from queue q.
+            ```
+- stacks and queues can be effectively implemented using either arrays or linked lists
+- the key issue is whether an upper bound on the size of the container is known in advance, thus permitting the use of a statically-allocated array
+
+***3.3 Dictionaries**
+- dictionary data type permits access to data items by content
+- you stick an item into a dictionary so you can find it when you need it
+- dictionary primary operations:
+
+    ```
+    • Search(D,k) – Given a search key k, return a pointer to the element in dictionary D whose key value is k, if one exists
+    • Insert(D,x) – Given a data item x, add it to the set in the dictionary D
+    • Delete(D,x) – Given a pointer to a given data item x in the dictionary D, remove it from D
+    ```
+
+- some dictionary data structures also support other useful operations: 
+   • Max(D) or Min(D)
+    - Retrieve the item with the largest (or smallest) key from D
+    - This enables the dictionary to serve as a priority queue
+   • Predecessor(D,k) or Successor(D,k)
+    - Retrieve the item from D whose key is immediately before (or after) k in sorted order 
+    - These enable us to iterate through the elements of the data structure
+```
+basic dictionary operations can be implemented with the following costs on unsorted and sorted arrays:
+
+Dictionary             Unsorted  Sorted      
+operation              Array     Array
+
+Search(L, k)           O(n)      O(log n)
+Insert(L, x)           O(1)      O(n)
+Delete(L, x)           O(1)      O(n)
+Successor(L, x)        O(n)      O(1)
+Predecessor(L, x)      O(n)      O(1)
+Minimum(L)             O(n)      O(1)
+Maximum(L)             O(n)      O(1)
+```
+
+- takeaway
+    - data structure design must balance all the different op-erations it supports
+    - the fastest data structure to support both operations A and B may well not be the fastest structure to support either operation A or B
+    - deletion is faster for sorted doubly-linked lists than sorted arrays, because splicing out the deleted element from the list is more efficient than filling the hole by moving array elements
+   - the predecessor pointer problem again complicates deletion from singly-linked sorted lists
+
+   **3.4 Binary Search Trees**
+    - ***rooted binary tree*** is recursively defined as either being 
+        - (1) empty OR
+        - (2) consisting of a node called the root, together with two rooted binary trees called the left and right subtrees
+    - the order among sibbling nodes matters in rooted trees, so left is different from right
+    - ***binary search tree*** labels each node in a binary tree with a single key such that for any node labeled x, all nodes in the left subtree of x have keys < x while all nodes in the right subtree of x have keys > x
+    - a Binary Tree is labeled if every node is assigned a label and a Binary Tree is unlabelled if nodes are not assigned any label
+    - for any binary tree on n nodes, and any set of n keys, there is exactly one labeling that makes it a binary search tree
+    - there are only 5 possible BSTs of 3 nodes
+
+    **3.4.1 Implementing Binary Search Trees**
+    - Binary tree nodes have left and right pointer fields, an (optional) parent pointer, and a data field
+
+    ```js
+        typedef struct tree { 
+                item_type item; /* data item */
+                struct tree *parent; /* pointer to parent */
+                struct tree *left; /* pointer to left child */
+                struct tree *right; /* pointer to right child */
+        } tree;
+    ```
+    - basic operations supported by binary trees are searching, traversal, insertion, and deletion
+
+***Seaching a Tree**
+- the binary search tree labeling uniquely identities where each key is located
+- start at the root unless it contains the query key x, proceed either left or right depending upon whether x occurs before or after the root key
+- this algorithm works because both the left and right subtrees of a binary search tree are themselves binary search trees
+- this recursive structure yields the recursive search algorithm below:
+
+```js
+    tree *search_tree(tree *l, item_type x) {
+    if (l == NULL) return(NULL); 
+    if (l->item == x) return(l); 
+    if (x < l->item)
+            return( search_tree(l->left, x) );
+        else 
+            return( search_tree(l->right, x) );
+    }
+```
+***This search algorithm runs in O(h) time, where h denotes the height of the tree***
+
+**Finding Minimum and Maximum Elements in a Tree**
+- Implementing the find-minimum operation requires knowing where the minimum element is in the tree
+- by definition, the smallest key must reside in the left subtree of the root, since all keys in the left subtree have values less than that of the root
+
+    ```js
+    tree *find_minimum(tree *t) {
+    tree *min; /* pointer to minimum */
+    if (t == NULL) return(NULL);
+    min = t;
+    while (min->left != NULL)
+        min = min->left;
+    return(min);
+    }
+    ```
+
+    **Traversal in a Tree**
+    - a prime application of tree traversal is listing the labels of the tree nodes
+    - binary search trees make it easy to report the labels in sorted order
+    - by definition, all the keys smaller than the root must lie in the left subtree of the root, and all keys bigger than the root in the right subtree
+    - thus, visiting the nodes recursively in accord with such a policy produces an in-order traversal of the search tree:
+
+    ```js
+    void traverse_tree(tree *l) 
+    {
+        if (l != NULL) { 
+            traverse_tree(l->left);
+            process_item(l->item); 
+            traverse_tree(l->right);
+        }
+    }
+    ```
+
+    - each item is processed once during the course of traversal, which runs in O(n) time, where n denotes the number of nodes in the tree.
+    - alternate traversal orders come from changing the position of process item relative to the traversals of the left and right subtrees
+    - processing the item first yields a pre-order traversal, while processing it last gives a post-order traversal
+    - these make relatively little sense with search trees, but prove useful when the rooted tree represents arithmetic or logical expressions
+
+    
+    

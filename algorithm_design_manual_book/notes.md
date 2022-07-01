@@ -663,4 +663,54 @@ Maximum(L)             O(n)      O(1)
     - these make relatively little sense with search trees, but prove useful when the rooted tree represents arithmetic or logical expressions
 
     
-    
+**Insertion in a Tree**
+- there is only one place to insert item x into a binary search tree T where we know we can find it again
+- we must replace the NULL pointer found in T after an unsuccessful query for the key k
+- this implementation uses recursion to combine the search and node insertion stages of key insertion
+- the three arguments to insert_tree are 
+    - a pointer 1 to the pointer linking the search subtree to the rest of the tree
+    - the key x to be inserted 
+    - a parent pointer to the parent node containing 1
+- the node is allocated and linked in on hitting the NULL pointer  
+- note that we pass the pointer to the appropriate left/right pointer in the node during the search, so the assignment *l = p; links the new node to the tree
+
+```js
+insert_tree(tree **l, item_type x, tree *parent)
+{
+    tree *p; /* temporary pointer */
+    if (*l == NULL) {
+        p = malloc(sizeof(tree)); /* allocate new node */
+        p->item = x;
+        p->left = p->right = NULL;
+        p->parent = parent;
+        *l = p; /* link into parent’s record */
+        return;
+}
+
+if (x < (*l)->item)
+    insert_tree(&((*l)->left), x, *l);
+else
+    insert_tree(&((*l)->right), x, *l);
+}
+```
+
+***Deletion from a Tree**
+- removing a node means appropriately linking its two descendant subtrees back into the tree somewhere else 
+- leaf nodes have no children and may be deleted by cleaing the pointer to the given node
+- if a node has one child, we can link the grandchiild directly to the parent without violating the in-order labeling property of the tree
+- with nodes that havee two childreen, we relabeel this node with the key of its immediate successer in sorted order
+- this successor could be the smallest value in the right subtree, specifically the left most descendant in the right subtree(p)
+- moving this to the point of deletion results in a properly labeled binary search tree, and reduces our deletion problem to physically removing a node with at most one child
+- worst case complexity is O(h) time because deleetion requirese the cost of at most two search operations (each costing O(h)) where h is the height of the tree, plus all the pointer manipulation 
+
+**3.4.2 How Good are Binary Search Trees?**
+- when implemented using binary search trees, all three dictionary operations take O(h), where h is the height of the tree
+- the smallest height we can hope for occurs when the tree is perfectly balanced, h = [log n]
+- bad things happen when we reply on insertion sort to build a tree
+- on average, we can say tree will be  O(log n)
+- quicksort is the fastest known sorting algorithm
+
+**3.4.3 Balanced Search Trees**
+- a better solution is an insertion/deletion procedure which adjusts the tree a little after insetion, which keeps it close enough to be balanced so the maximum height is logarithmic 
+- sophisticated balanced binary search tree data structures have been developed that are O(log n)
+- therefore all dictionary operations (insert, delete, query) take O(log n) time each 

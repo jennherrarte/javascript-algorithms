@@ -501,7 +501,7 @@ return( search_list(l->next, x) );
     - linked lists do not allow efficient random access to items 
     - arrays allow  better memory locality  and cache performance than random pointer jumping 
 
-- takeaway
+- take-away
     - dynamic memory allocation providesus with flexibility on how and where we use our limited  storage resources 
 
 - these fundamental structures can be through of as recursive objects: 
@@ -578,7 +578,7 @@ Minimum(L)             O(n)      O(1)
 Maximum(L)             O(n)      O(1)
 ```
 
-- takeaway
+- take-away
     - data structure design must balance all the different op-erations it supports
     - the fastest data structure to support both operations A and B may well not be the fastest structure to support either operation A or B
     - deletion is faster for sorted doubly-linked lists than sorted arrays, because splicing out the deleted element from the list is more efficient than filling the hole by moving array elements
@@ -693,7 +693,6 @@ else
     insert_tree(&((*l)->right), x, *l);
 }
 ```
-
 ***Deletion from a Tree**
 - removing a node means appropriately linking its two descendant subtrees back into the tree somewhere else 
 - leaf nodes have no children and may be deleted by cleaing the pointer to the given node
@@ -714,3 +713,93 @@ else
 - a better solution is an insertion/deletion procedure which adjusts the tree a little after insetion, which keeps it close enough to be balanced so the maximum height is logarithmic 
 - sophisticated balanced binary search tree data structures have been developed that are O(log n)
 - therefore all dictionary operations (insert, delete, query) take O(log n) time each 
+
+// return to ***stop and think: exploiting balanced search trees***
+
+**3.5 Priority Queues**
+- priority queues are data structures that provide more flexibility than simple sorting, because they allow new elements to enter a system at arbitrary intervals 
+- it's much more cost-effective to insert a new job into a priority queue than to re-sort everything onn each such arrival
+- basic priority queue supports three primary operations:
+    - ***Insert(Q, x)*** - given an item x with key k, insert it into the priority queue Q
+    - ***Find-Maximum(Q) or Find-Maximum(Q)*** - return a pointer to the item whose key value is smaller (larger) than any other key in the priority queue Q
+    - ***Delete-Minimum(Q) or Delete-Maximum(Q)*** - remove an item from the priority queue Q whose key is minimum (maximum)
+
+***take-away**
+- building algorithms around data structures such as dictionaries and priority queues leads to both clean structure and good performance 
+
+```
+Basic Priority Queue Implementations
+
+                     Unsorted  Sorted  Balanced
+                     Array     Array   Tree
+Insert (Q,x)         O(1)      O(n)    O(log n)
+Find-Minimum(Q)      O(1)      O(1)    O(1)
+Delete-Minimum(Q)    O(n)      O(1)    O(log n)
+```
+
+**3.7 Hashing + Strings**
+- hash tables are a very practical way to maintain a dictionary 
+- they exploit the fact that looking up an itemm in an array takes constant time once you have its index
+- hash function - mathematical function that maps keys to integers 
+-
+**3.7.1 Collision Resolution**
+- we need to be prepared for collisions with hash functions because two distinct keys will occasionally hash to the same value 
+- chaining is the easiest  approach to fix this  
+- chaining devotes a lot of memory to pointers 
+- this space could be used to make the table larger, hence the 'lists' smaller
+- an alternative is called open addressing 
+- hash table is maintained as an array of elements (not buckets), each initialized to  null 
+- on insertion, we see if the desired position is empty, if so, we insert it
+- if not, we need to find some other place to insert
+- simplest possibility is sequential probing, which inserts the item in the next open spot  in the table
+- now we can search for a given key using appropriate hash value and check to see if the item there is the one we want
+- if so, return otherwise keep checking length of  the array 
+- deletion in an open addressing scheme requires reinserting all of the  items in the run following the new hole 
+- chaining and open addressing both require O(m) to initialize an m-element hash table to null  elements prior to the first insertion
+- traversing all the elements in the hash tabletakes O(n + m) time for chaining, because we have to scan all the m buckets looking for elements, even if the actual number of inserted items is small
+- this reduces to O(m) time for open addressing since n must be must be m at most  
+- when using chaining with doubly-linked lists to resolve collisions in an m-element hash table, the dictionary operations for n items can be implemented in the following expected & worst case times 
+
+
+```
+                          Hash table     Hash table 
+                          (expected)     (worst case)
+Search(L, k)              O(n/m)         O(n)
+Insert(L, x)              O(1)           O(1)
+Delete(L, x)              O(1)           O(1)
+Successor(L, x)           O(n + m)       O(n + m)
+Predecessor(L, x)         O(n + m)       O(n + m)
+Minimum(L)                O(n + m)       O(n + m)
+Maximum(L)                O(n + m)       O(n + m)
+
+```
+
+- a hash table is iiften the best data structurer to maintain a dictionary  
+
+**3.7.2 Efficient String Matching via Hashing**
+- robert-karp algorithm - a linear expected time algorithm for a string matching 
+- its based on hashing 
+- good example of a randomized algorithm  
+
+**3.7.3 Duplicate Detection via Hasing**
+- key idea of hashing is to represent a large  object (key, string, substring) using a simple number
+- the goal is a represenation of the large object by an entity that can be manipulated in constant time, such that its relitavely unlikely that the different large objects map to the same value 
+- hashing has a lot of use cases
+- hashing is a fundamental idea in randomized algorithms, yeilding expected time algorithms for problems  𝚯(nlogn) or  𝚯(n^2) in the worst  case
+
+**3.8 Special Data Structures**
+- these efficient, specialized data structures are important for efficient graph and geometric algorithms so one should be aware of their existence
+- ***String data structures***
+    - character strings are typically represented by arrays of characters, perhaps with a special character to mark the end of the string 
+    - suffix trees/arrays are special data structures that preprocess strings to make pattern matching operations faster 
+- ***Geometric data structures***
+    - geometric data typically consists of collections of data points and regions
+    - regions in the plane can be described by polygons, where the boundary of the polygon is given by a chain of line segments
+    - polygons can be represented using an array of points (v1,...,vn,v1), such that (vi,vi+1) is a segment of the boundary
+    - spatial data structures such as kd-trees organize points and regions by geometric location to support fast search
+- ***Graph data structures*** 
+    – graphs are typically represented using either adjacency matrices or adjacency lists
+    - the choice of representation can have a substantial impact on the design of the resulting graph algorithms
+- ***Set data structures***  
+    – subsets of items are typically represented using a dictionary to support fast membership queries
+    - alternately, bit vectors are boolean arrays such that the ith bit represents true if i is in the subset

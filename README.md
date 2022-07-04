@@ -176,12 +176,6 @@ https://medium.com/interviewnoodle/grokking-leetcode-a-smarter-way-to-prepare-fo
 - [ ] Problem Challenge 2: LC 33, LC 81
 - [ ] Problem Challenge 3: LC 153, LC 154
 
-### Pattern: Bitwise XOR (4) Optional
-- [ ] Single Number (easy): LC 136
-- [ ] Two Single Numbers (medium): LC 260
-- [ ] Complement of Base 10 Number (medium): LC 476
-- [ ] Problem Challenge 1: LC 832
-
 ### Pattern: Top 'K' Elements (14) Required
 - [ ] Top 'K' Numbers (easy): new (​link​)
 - [ ] Kth Smallest Number (easy): LC 215 (smallest instead of largest)

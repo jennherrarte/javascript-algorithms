@@ -91,15 +91,15 @@ https://medium.com/interviewnoodle/grokking-leetcode-a-smarter-way-to-prepare-fo
       Done:
 
 ### Pattern: Cyclic Sort (8) Required
-- [ ] Cyclic Sort (easy): new (​link​)
+- [x] Cyclic Sort (easy): new (​link​)
       Done; 
-- [ ] Find the Missing Number (easy): LC 268
+- [x] Find the Missing Number (easy): LC 268
       Done;
-- [ ] Find all Missing Numbers (easy): LC 448
+- [x] Find all Missing Numbers (easy): LC 448
       Done; 
-- [ ] Find the Duplicate Number (easy): LC 287
+- [x] Find the Duplicate Number (easy): LC 287
       Done; 
-- [ ] Find all Duplicate Numbers (easy): LC 442
+- [x] Find all Duplicate Numbers (easy): LC 442
       Done;
 - [ ] Problem Challenge 1: LC 645
       Done;

@@ -358,3 +358,21 @@ function printArray(a) {
     - must be initialized at the time of declaration
     - can never be updated
    <hr>
+
+  ### JS Array Methods
+  - the most frequently used array methods in JS are: map, filter, find, reduce, and forEach
+  # The map array method
+  - ***map*** creates a new copy of the original array
+  - we use it when we want to do something with the elements of the original array but don't want to change it
+  - ***map*** iterates over the original array and takes a callback function as an argument
+  - in the callback function, we tell it what to do with the elements
+
+    ```js
+    const a = [1,2,3,4,5]
+
+    // Create a new array which multiplies every element by 2
+
+    const d = a.map(function(item){ return item*2 })
+
+    console.log(d) // [2,4,6,8,10]
+    ```

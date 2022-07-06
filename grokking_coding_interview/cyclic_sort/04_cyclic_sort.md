@@ -180,19 +180,37 @@ function find_the_duplicate_number(nums) {
 ```
 ```
 **Example 1:**
-Input: [1, 4, 4, 3, 2]
-Output: 4
+Input: [1, 5, 2, 7, 4, 3, 2, 6]
+Output: 2
 
 **Example 2:**
-Input: [2, 1, 3, 3, 5, 4]
+Input: [1, 5, 3, 7, 4, 2, 3, 6]
 Output: 3
-
-**Example 3:**
-Input: [2, 4, 1, 4, 4]
-Output: 4
 ```
 ```js
+function find_duplicate(nums) {
+    let slow = 0;
+    let fast = 0;
+    let round1 = true;
+    let round2 = false;
 
+    while(round1) {
+        if(nums[slow] === nums[fast] && round2) {
+            slow = 0;
+            round1 = false;
+        } else {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+            round2 = true;
+        }
+    }
+
+    while(round2) {
+        if(nums[fast] === nums[slow]) return nums[slow];
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+}
 ```
 
 > **Time: O(n)**<br>

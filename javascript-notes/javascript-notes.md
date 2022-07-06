@@ -337,3 +337,24 @@ function printArray(a) {
    ```
 
    **Note:** Slice method won't mutate the original array but it returns the subset as a new array.
+
+   ### Variables in JavaScript 
+
+  **Var**
+    - var  is  functionally or globally scoped
+    - can be redeclated
+    - can be  declared without intialization 
+    - can be updated
+
+  **Let**
+    - let is block  scoped
+    - cannot be re-declared within its scope
+    - can be declared without initialization
+    - can be updated
+
+  **Const**
+    - const is block scoped
+    - cannot be re-declared within its scope
+    - must be initialized at the time of declaration
+    - can never be updated
+   <hr>

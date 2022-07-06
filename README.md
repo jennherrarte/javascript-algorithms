@@ -213,8 +213,10 @@ https://medium.com/interviewnoodle/grokking-leetcode-a-smarter-way-to-prepare-fo
 - [ ] Tasks Scheduling Order (medium): LC 210
 - [ ] All Tasks Scheduling Orders (hard): LC 210 (output all possible solutions)
 - [ ] Alien Dictionary (hard): LC 269
-- [ ] Problem Challenge 1: LC 444 Problem Challenge 2: LC 310
-- [ ] Miscellaneous (1)
+- [ ] Problem Challenge 1: LC 444 
+- [ ] Problem Challenge 2: LC 310
+
+### Pattern: Miscellaneous (1)
 - [ ] Kth Smallest Number (hard): LC 215 (smallest instead of largest)
 
 

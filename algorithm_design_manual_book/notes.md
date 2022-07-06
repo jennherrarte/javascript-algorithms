@@ -2,6 +2,7 @@
 1. [Intro to Algorithm Design](#Chapter-1-Intro-to-Algorithm-Design)
 2. [Algorithm Analysis](#Chapter-2-Algorithm-Analysis)
 3. [Data Structures](#Chapter-3-Data-Structures)
+4. [Sorting and Searching](#Chapter-4-Sorting-and-Searching)
 
  <hr /> 
 
@@ -579,7 +580,7 @@ Maximum(L)             O(n)      O(1)
 ```
 
 - take-away
-    - data structure design must balance all the different op-erations it supports
+    - data structure design must balance all the different operations it supports
     - the fastest data structure to support both operations A and B may well not be the fastest structure to support either operation A or B
     - deletion is faster for sorted doubly-linked lists than sorted arrays, because splicing out the deleted element from the list is more efficient than filling the hole by moving array elements
    - the predecessor pointer problem again complicates deletion from singly-linked sorted lists
@@ -803,3 +804,53 @@ Maximum(L)                O(n + m)       O(n + m)
 - ***Set data structures***  
     – subsets of items are typically represented using a dictionary to support fast membership queries
     - alternately, bit vectors are boolean arrays such that the ith bit represents true if i is in the subset
+
+### Chapter 4 Sorting and Searching
+- sorting is the basic building block that many other algorithms are built around
+- dozens of different sorting algorithms are known, most of which possess some particular advantage over all other algorithms in certain situations
+- fundamental algos covered as important design paradigms: 
+    - heapsort
+    - mergesort
+    - quicksort
+    - distribution sort
+**4.1 Applications of Sorting**
+- clever sorting algorithms exist that run in O(n log n) 
+- this is a huge improvement over naive O(n^2) sorting algorithms for large values of n
+- an important algorithm design technique is to use sorting as a basic building block, because many other problems become easy once a set of items is sorted
+- example  applications: 
+    - ***searching***
+        - binary search tests whetheer an item iis in a  dictionary in O(log n) time, provided the keys are all sorted
+        - search processing is perhaps the single most important aplication of sortin
+    - ***closest pair***
+        - a linear time scan of a set of n numbers to find the pair of numbers with the smallest difference between them would be O(n log n) time including the sorting
+    - ***element uniqueness***
+        - can use to find duplicates in a set, by asking if there's a gap of zero between adjacent pairs
+    - ***frequency distribution***
+        -  using sorting, you can  findd the largest frequency of an element by sweeping from left to right and count them
+    - ***selection***
+        - kth largest item in an array can be found if the keys are placed in sorted order, the kth largest can be found in constant time by looking at the kth position of the array
+    - ***convex hulls*** 
+        - we can use sorting to construct a convex wall by sorting the points by x-coordinate and inserting the points from left to right into the hull
+        - since the right most  point is always on the boundary,  we know that it  will be appear in the hull
+        - adding this new right-most point may cause others to be deleted, but we can quickly identify these points because they lie inside the polygon formed by adding the new point 
+        - these points will be neighbors of the previous point we inserted,  so they will be easy to find and delete
+        -  total time is linear after sorting
+    - **take-away**
+        - sorting lies at the heart of many algos
+        - sorting data is one of the first things any algo designer should try in the quest for efficiency 
+        
+**4.2 Pragmatics of Sorting**
+- deciding what order we want items sorted will depend on the application because different applications call for different orders: 
+    - ***Increasing or decreasing order***
+    - ***Sorting just the key or an entire record***
+    - ***What should we do with equal keys?***
+        - note: sometimes it is required to leave items in the same relativee order as in the original permutation
+        - sorting algos that automatically enforce this requirement are called ***stable***
+        - few fast algos are stable
+        - stability can be achievedd by adding the initial position as a secondary key
+    - ***What about non-numerical data?***
+        - alphabetizing is the sorting of text strings
+        - we can make rules about the collating sequence of chars and numbers using a  comparison functionn 
+        - by abstracting pairwise ordering decision to such a comparison function, we can implement sorting algorithms independent of such criteria
+        - you can pass this the comparison function in as an argument to the sort procedure 
+    

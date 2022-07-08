@@ -376,3 +376,15 @@ function printArray(a) {
 
     console.log(d) // [2,4,6,8,10]
     ```
+
+    # The filter array method
+
+    filter creates a new array with elements that meet the given condition(s).
+    ```js
+    // Return the words with more than 6 letters
+    const words = ['react', 'script', 'interview', 'style', 'javascript']
+
+    const ans = words.filter((word) => word.length > 6)
+
+    console.log(ans) // ['interview', 'javascript']
+    ```

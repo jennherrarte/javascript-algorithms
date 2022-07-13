@@ -388,3 +388,46 @@ function printArray(a) {
 
     console.log(ans) // ['interview', 'javascript']
     ```
+
+  # The forEach array method
+  - forEach is very similar to map but has two key differences:
+    - map returns a new Array, but forEach doesn't
+    - you can do method chaining in map but not in forEach
+    - note: map and forEach don't mutate (change) the original array
+
+### Functional Programming in JavaScript
+
+- You can make function in two ways: 
+
+``` js
+function a(){
+ console.log('I am a normal function');
+ }
+ 
+const b = () => {
+console.log('I am an arrow function')
+}
+
+// They are essentially the same but with a few differences which we will cover as we go along this tutorial. 
+
+// We can pass variables as arguments
+
+const c = (name) => {
+console.log(`My name is ${name}`)
+}
+
+// `` template literal are a new addition to the language. Very useful for string formatting. Values are accessed using ${} inside them.
+
+// We can even pass functions as arguments to a function. Will see more on this when we try to understand closures.
+
+const greet = () =>  {
+    const prefix = 'Mr'
+    return (name) => {
+        console.log(`${prefix} ${name}, welcome!`)
+    }
+}
+
+console.log(greet()('Jack'))
+```
+
+### Function Scope in JavaScript

@@ -109,9 +109,9 @@ https://medium.com/interviewnoodle/grokking-leetcode-a-smarter-way-to-prepare-fo
       Done;
 
 ### Pattern: In-place Reversal of a LinkedList (5) Required
-- [ ] Reverse a LinkedList (easy): LC 206
+- [x] Reverse a LinkedList (easy): LC 206
       Done: 
-- [ ] Reverse a Sub-list (medium): LC 92
+- [x] Reverse a Sub-list (medium): LC 92
       Done: 
 - [ ] Reverse every K-element Sub-list (medium): LC 25
       Done: 

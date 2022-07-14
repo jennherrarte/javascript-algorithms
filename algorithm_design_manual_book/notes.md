@@ -854,3 +854,46 @@ Maximum(L)                O(n + m)       O(n + m)
         - by abstracting pairwise ordering decision to such a comparison function, we can implement sorting algorithms independent of such criteria
         - you can pass this the comparison function in as an argument to the sort procedure 
     
+    **4.3 Heapsort: Fast Sorting  via Data Structures**
+     - using a priority queue implementation speeds up selection sort from O(n^2) to O(nlogn)
+     - heapsort is an implementation of selection sort using the right data structure
+
+     **4.3.1 Heaps**
+     - heaps are a simple and elegant data structure for effeciently supporting  the priority queue operations insert and extract-min
+     - heaps work by maintaining a partial order on the set of elements which is weaker than the sorted  order (so it can be efficient to maintain) yet stronger than random order (so the minimum element can be quickly identified)
+     - a heap labeled tree is defined to be a binary tree such that the key  labeling of each node dominates the key labeling of its children 
+     - priority queue operations
+        - insert
+        - extract-min
+    - in a ***min-heap***, a node dominates its children by containing a smaller key than they do
+    - in a ***max-heap***, parent nodes dominate by being bigger 
+    - heap allows us to represent binary trees without using any pointers
+    - we will store data as an array of keys, and use the position of the keys to implicitly satisfy thee role of the pointers
+    - we will store the root of the tree in the first position of the array and its left and right children in the second & third positions 
+    - all internal nodes still take up space in our structure, since we most represent a full binary tree to maintain the positional mapping between points & children 
+    - space efficiency demandsthat each level be packed as much as it  can be 
+    - if  so, only the last level may be incomplete
+    - by packing the elements of the last level, as far to the left as possible, we can  represent an n-key  tree  using exactly elements of the array
+
+   **4.3.2 Contructing Heaps**
+   - heaps can be constructed incrementally by inserting each new element into the left most open spot in the array
+   - this ensures the desired  balanced shape of the heap-lababled tree, but  does not neccessariily  maintain the dominance ordering of the keys
+   - new key might be less than its parent in a min-heap, or  greater than its parent in a  max-heap
+   - solution is to swap any dissatisfied element with its parent
+   - the old parent is now happy  because its properly dominated  
+   -  the other child of the old parent is still happy because it is now dominated by a element  of even more extreme than its previous parent  
+   - new element is happier but may still dominate its new parent 
+   - the new key bubbles up to its proper position in the hierarchy
+   - by replacing the root of the subtree by a larger one at each step, we presereve the heap order elsewhere
+   - an initial heap of n elements can be constructed in O(nlogn) time through n such insertions
+   
+**4.3.3 Extracting the minimum**
+- removing the top element leaves a hole in the array which can be filled by moving the element from the right most leaf into the first position 
+- if the current root is dominant, the heap order has been resorted 
+- if not, the dominant child should be swapped with the root and the problem pushed down to the next leevel
+- the dissatisfied element bubbles down the heap until it  dominates all of its children, maybe becoming a  leaf node and ceasing to have any childrenn
+- this percolate down operation is also  called ***heaify*** because it merges two heaps (the subtrees  below with  a new key, the original root)
+- root deletion is comepleted in O(logn) time
+- exchanging the max element with the last element and calling the heapify repeatedly gives an O(nlogn) sorting algorithm called **heapsort**
+- Heapsort worst case - O(nlogn)
+- it is  an in place sort, meaning it uses  no extra memory over the  array containing the  elements to be sorted

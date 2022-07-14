@@ -897,3 +897,25 @@ Maximum(L)                O(n + m)       O(n + m)
 - exchanging the max element with the last element and calling the heapify repeatedly gives an O(nlogn) sorting algorithm called **heapsort**
 - Heapsort worst case - O(nlogn)
 - it is  an in place sort, meaning it uses  no extra memory over the  array containing the  elements to be sorted
+
+**4.3.5 Sorting by Incremental Insertion**
+- insertion sort is thr simplest example of the ***incremental insertion*** technique, where we build up a complicated structure of n items by first building it on n-1 items and then making the necessary changes to add the last item 
+- incremental insertion is useful in geometric algorithms 
+- insertion into a balanced tree takes O(log n) per operation, or a total of O(nlogn) to construct the tree
+- an in-order traversal reads through the elements in sorted order to complete the job in linear time 
+
+**4.5 Mergesort: Sorting by Divide-and-Conquer**
+- recursive algorithms reduce large problems into smaller ones
+- a recursive approach to sorting involves partioning the elements into two groups, sorting each of the smaller problems recursively, then interleaving two sorted lists to totally order the elements - this is called mergesort  
+- base case - occurs when the subarray to be sorted consists of a single element, so no rearrangement is possible
+- efficiency of mergesort depends upon how efficiently we combine the two sorted halves into a single sorted list 
+- we can ***merge*** the two lists together
+- we can do this by removing the element at the top of the list for each of the lists until they are both empty (element at the top is the smallest) - a total of O(n) work
+- linear work is done merging all the elements at each level 
+- mergesort takes O(nlogn) time in the worst case
+- mergesort is a great algo for sorting linked lists, because it does not rely on random access to elements as does heapsort or quicksort
+- disadbantage - the need for auxillary buffer when sorting arrays
+- to merge two sorted arrays (or portions of an array), we need a third array to sort the result of the merge to avoid stepping on component arrays
+- mergesort is a classic divide and conquer algorithm 
+
+**TO DO: look up mergesort in js**

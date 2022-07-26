@@ -18,5 +18,16 @@
   "homepage": "https://github.com/JennHerrarte/javascript-algorithms#readme",
   "devDependencies": {
     "jest": "^28.1.0"
+  },
+  "dependencies": {
+    "collections": "^5.1.13"
+  },
+  "jest": {
+    "rootDir": "./",
+    "modulePaths": [
+      "<rootDir>",
+      "node_modules",
+      "src"
+    ]
   }
 }

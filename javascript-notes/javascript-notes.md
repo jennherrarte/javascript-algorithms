@@ -431,3 +431,8 @@ console.log(greet()('Jack'))
 ```
 
 ### Function Scope in JavaScript
+- Scope determines from where the variables are accessible
+- There are three types of scope:
+  - Global (declaration outside of any function) (var)
+  - Function (declaration inside a function)
+  - Block (declaration inside a block) (let / const)

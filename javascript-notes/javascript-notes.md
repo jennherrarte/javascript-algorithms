@@ -436,3 +436,64 @@ console.log(greet()('Jack'))
   - Global (declaration outside of any function) (var)
   - Function (declaration inside a function)
   - Block (declaration inside a block) (let / const)
+
+### Closures 
+- a function bundled together with its lexical environment forms a closure.
+- lexical environment is essentially the surrounding state – the local memory along with the lexical environment of its parent
+
+```js
+function x() {
+  var a = 7
+  function y() {
+    console.log(a)
+  }
+  return y
+}
+
+var z = x()
+console.log(z) // [Function: y]
+z()
+```
+
+- When x is invoked, y is returned
+- Now, y is waiting to be executed
+- when we finally invoke z, y is invoked
+- Now, y has to log a so it first tries to find 🔍 it in the local memory but it's not there - It goes to its parent function and finds a there - this is closure 
+- ***even when functions are returned (in the above case y) they still remember their lexical scope (where it came from***
+
+- **Advantages of Closures in JavaScript**
+- Currying
+
+```js
+let add = function (x) {
+  return function (y) {
+    console.log(x + y)
+  }
+}
+
+let addByTwo = add(2)
+addByTwo(3)
+
+// basically passing in 2 and 3 as arguments
+```
+
+- **Data Hiding/Encapsulation**
+  - if you want to create a counter application but you don't want to expore the variable outside the function when you call it to increase it  by 1  
+
+```js
+function Counter() {
+  var count = 0
+  this.incrementCount = function () {
+    count++
+    console.log(count)
+  }
+}
+
+console.log(count) // Error: count is not defined
+var adder = new Counter()
+adder.incrementCount() // 1
+```
+-  **Disadvantages of Closures in JavaScript**
+  - overconsumption of memory or memory leaks can happen
+  -  ***For example - the closed-over-variable will not be garbage collected. This is because, even if the outer function has run, the returned inner function still has a reference to the closed-over-variable.***
+  - **Note**: Garbage collection basically removes unused variables from the memory automatically.

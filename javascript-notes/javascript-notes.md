@@ -497,3 +497,29 @@ adder.incrementCount() // 1
   - overconsumption of memory or memory leaks can happen
   -  ***For example - the closed-over-variable will not be garbage collected. This is because, even if the outer function has run, the returned inner function still has a reference to the closed-over-variable.***
   - **Note**: Garbage collection basically removes unused variables from the memory automatically.
+
+**Hoisting in JavaScript**
+- Hoisting is Javascript's default behavior of moving declarations to the top of the program
+  - var declaration is hoisted up and initialized with undefined
+  - let and const declarations are hoisted up but not initialized
+  - function definitions are also hoisted up and stored as they are
+
+  ```js
+  function consoleNum() {
+  console.log(num)
+  var num = 10
+}
+
+consoleNum() // undefined
+
+// Why no error?
+
+// This is how runtime sees this
+{
+  var num
+  console.log(num)
+  num = 9
+}
+
+// If instead of var -> let, it will give an error as let values are not initialized
+```

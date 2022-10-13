@@ -508,18 +508,55 @@ adder.incrementCount() // 1
   function consoleNum() {
   console.log(num)
   var num = 10
-}
+  }
 
-consoleNum() // undefined
+  consoleNum() // undefined
 
-// Why no error?
+  // Why no error?
 
-// This is how runtime sees this
-{
-  var num
-  console.log(num)
-  num = 9
-}
+  // This is how runtime sees this
+  {
+    var num
+    console.log(num)
+    num = 9
+  }
+  // If instead of var -> let, it will give an error as let values are not initialized
+  ```
 
-// If instead of var -> let, it will give an error as let values are not initialized
-```
+***This*** **in JavaScript**
+-  ***This*** provides context and its value depends on how and where it is called
+- EXAMPLE:
+  - if you call ***console.log(this)*** it will point to the window object
+
+- EXAMPLE:
+  ```js
+  function myFunc() {
+      console.log(this)     
+    }
+  
+  const obj = {
+    bool: true,
+    myFunc: myFunc,
+  }
+
+  obj.myFunc()
+  ```
+
+  // return to prototypal inheritance section 
+
+### What are template literals
+
+     Template literals or template strings are string literals allowing embedded expressions. These are enclosed by the back-tick (`) character instead of double or single quotes.
+     In E6, this feature enables using dynamic expressions as below,
+
+     ```javascript
+     var greeting = `Welcome to JS World, Mr. ${firstName} ${lastName}.`;
+     ```
+
+     In ES5, you need break string like below,
+
+     ```javascript
+     var greeting = 'Welcome to JS World, Mr. ' + firstName + ' ' + lastName.`
+     ```
+
+     **Note:** You can use multi-line strings and string interpolation features with template literals.

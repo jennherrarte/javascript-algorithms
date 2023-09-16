@@ -1,4 +1,8 @@
 
+![10](https://github.com/jennherrarte/javascript-algorithms/assets/36706323/78f7a448-88d7-4edb-90ce-5dcb3d41e358)
+
+
+
 *This project uses [Jest](https://github.com/facebook/jest) for writing the tests.*
 ### Example 
 ```

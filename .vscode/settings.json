@@ -1,3 +1,5 @@
 {
-  "editor.acceptSuggestionOnEnter": "on"
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.inlineSuggest.suppressSuggestions": false,
+  "editor.inlineSuggest.enabled": false
 }

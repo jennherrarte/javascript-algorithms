@@ -112,3 +112,10 @@ function strRev(str, startRev, endRev) {
 // endRev = 4
 // return str
 
+
+// NOTE - TC
+O(n+n)=O(n)
+
+// NOTE - SC
+O(n)
+ 
